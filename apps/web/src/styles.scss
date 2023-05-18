@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: Orbitron;
+  src: url("/assets/fonts/Orbitron-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: SansSerifFLF;
+  src: url("/assets/fonts/SansSerifFLF.otf");
+  font-weight: bold;
+}
+
+$font-family-sans-serif: SansSerifFLF, sans-serif;
+@import "bootstrap/scss/bootstrap";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Orbitron, sans-serif;
+}
