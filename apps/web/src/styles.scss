@@ -14,13 +14,14 @@
 $font-family-sans-serif: SansSerifFLF, sans-serif;
 @import "bootstrap/scss/bootstrap";
 
-h1, h2, h3, h4, h5, h6 {
+.font-orbitron {
   font-family: Orbitron, sans-serif;
 }
 
 button {
   color: white;
-  padding: 0.5rem 2rem;
+  padding: 0.25rem 0.25rem;
+  margin: 1px;
   background: linear-gradient(45deg, #44544d, #304038);
   border: 1px solid #446655;
   text-shadow: 1px 1px 1px black;
