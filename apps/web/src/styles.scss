@@ -17,3 +17,13 @@ $font-family-sans-serif: SansSerifFLF, sans-serif;
 h1, h2, h3, h4, h5, h6 {
   font-family: Orbitron, sans-serif;
 }
+
+button {
+  color: white;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(45deg, #44544d, #304038);
+  border: 1px solid #446655;
+  text-shadow: 1px 1px 1px black;
+
+  // TODO make the corners #85ddc5, but just the single pixel
+}
