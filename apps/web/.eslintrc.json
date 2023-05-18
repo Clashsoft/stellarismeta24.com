@@ -9,7 +9,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "stellarismeta24Com",
+            "prefix": "sm",
             "style": "camelCase"
           }
         ],
@@ -17,7 +17,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "stellarismeta24-com",
+            "prefix": "sm",
             "style": "kebab-case"
           }
         ]

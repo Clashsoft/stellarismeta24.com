@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'stellarismeta24.com-root',
+  selector: 'sm-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
