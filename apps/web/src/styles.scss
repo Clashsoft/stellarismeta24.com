@@ -34,3 +34,8 @@ button:hover, .btn:hover, .btn.active {
 .btn.selected {
   border-image-source: url('assets/styles/button_select.png');
 }
+
+button:disabled, button.disabled, .btn.disabled {
+  filter: grayscale(100%);
+  border-image-source: url('assets/styles/button.png');
+}
