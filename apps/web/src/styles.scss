@@ -18,7 +18,7 @@ $font-family-sans-serif: SansSerifFLF, sans-serif;
   font-family: Orbitron, sans-serif;
 }
 
-button, a.button {
+button, .btn {
   color: white;
   border-width: 24px;
   border-image-slice: 23 23 23 23 fill;
@@ -27,10 +27,10 @@ button, a.button {
   margin: -10px;
 }
 
-button:hover, a.button.active {
+button:hover, .btn:hover, .btn.active {
   border-image-source: url('assets/styles/button_hover.png');
 }
 
-a.button.selected {
+.btn.selected {
   border-image-source: url('assets/styles/button_select.png');
 }
