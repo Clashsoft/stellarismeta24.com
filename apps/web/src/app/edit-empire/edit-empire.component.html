@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-2 text-center d-flex flex-column bg-dark text-light">
+  <div class="col-2 text-center d-flex flex-column plain-bg">
     <h5 class="mt-4">Species</h5>
     <a class="btn disabled" smTooltip="Not supported yet. Please configure ingame.">
       Appearance
@@ -44,7 +44,12 @@
     <button class="btn mt-auto">Save</button>
     <button class="btn" disabled>Back</button>
   </div>
-  <div class="col">
+  <div class="col d-flex align-items-center justify-content-center">
+    <div class="plain-bg" style="width: 640px; height: 480px;">
+      <h4 class="position-absolute text-center title-glow" style="top: 0; left: 40px; width: 320px">
+        Test
+      </h4>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div>
