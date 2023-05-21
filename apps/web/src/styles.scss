@@ -43,3 +43,16 @@ $font-family-sans-serif: SansSerifFLF, sans-serif;
   filter: grayscale(100%);
   border-image-source: url('assets/styles/button.png');
 }
+
+[smTooltip] {
+  pointer-events: all !important;
+}
+
+.tooltip-container {
+  color: white;
+  max-width: 300px;
+  position: fixed;
+  border: 8px solid;
+  border-image-slice: 8 fill;
+  border-image-source: url('assets/styles/tooltip.png');
+}
