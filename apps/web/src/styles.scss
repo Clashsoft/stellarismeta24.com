@@ -18,16 +18,20 @@ $font-family-sans-serif: SansSerifFLF, sans-serif;
   font-family: Orbitron, sans-serif;
 }
 
-button, .btn {
+.btn {
   color: white;
   border-width: 24px;
   border-image-slice: 23 23 23 23 fill;
   border-image-source: url('assets/styles/button.png');
   background: none;
   margin: -10px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button:hover, .btn:hover, .btn.active {
+.btn:hover, .btn.active {
   border-image-source: url('assets/styles/button_hover.png');
 }
 
@@ -35,7 +39,7 @@ button:hover, .btn:hover, .btn.active {
   border-image-source: url('assets/styles/button_select.png');
 }
 
-button:disabled, button.disabled, .btn.disabled {
+.btn:disabled, .btn.disabled {
   filter: grayscale(100%);
   border-image-source: url('assets/styles/button.png');
 }
