@@ -14,6 +14,14 @@
 $font-family-sans-serif: CenturyGothic, sans-serif;
 @import "bootstrap/scss/bootstrap";
 
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .font-orbitron {
   font-family: Orbitron, sans-serif;
 }
@@ -24,7 +32,7 @@ $font-family-sans-serif: CenturyGothic, sans-serif;
   border-image-slice: 23 23 23 23 fill;
   border-image-source: url('assets/styles/button.png');
   background: none;
-  margin: -10px;
+  margin: -12px;
   height: 48px;
   display: flex;
   align-items: center;
