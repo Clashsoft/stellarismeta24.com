@@ -67,6 +67,7 @@ body {
   max-width: 300px;
   position: fixed;
   border: 8px solid;
+  padding: 0 16px;
   border-image-slice: 8 fill;
   border-image-source: url('assets/styles/tooltip.png');
 }

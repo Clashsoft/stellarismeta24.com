@@ -54,7 +54,7 @@ export class TooltipDirective implements OnDestroy {
   }
 
   private updatePosition(event: MouseEvent) {
-    this.container!.style.left = `${event.clientX + 10}px`;
-    this.container!.style.top = `${event.clientY + 10}px`;
+    this.container!.style.left = `${event.clientX + 12}px`;
+    this.container!.style.top = `${event.clientY + 12}px`;
   }
 }
