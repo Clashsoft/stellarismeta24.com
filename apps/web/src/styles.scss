@@ -6,12 +6,12 @@
 }
 
 @font-face {
-  font-family: SansSerifFLF;
-  src: url("/assets/fonts/SansSerifFLF.otf");
+  font-family: CenturyGothic;
+  src: url("/assets/fonts/CenturyGothic.ttf");
   font-weight: bold;
 }
 
-$font-family-sans-serif: SansSerifFLF, sans-serif;
+$font-family-sans-serif: CenturyGothic, sans-serif;
 @import "bootstrap/scss/bootstrap";
 
 .font-orbitron {
