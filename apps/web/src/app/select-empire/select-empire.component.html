@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-auto plain-bg p-3">
+    <h4 class="p-3">Select Empire</h4>
+    <a routerLink="random" class="select-button mb-1" style="background-image: url('/assets/styles/select_random.png')">
+      Random
+    </a>
+    <a routerLink="new" class="select-button mb-1" style="background-image: url('/assets/styles/select_create_new.png')">
+      Create New
+    </a>
+    <a *ngFor="let empire of empires" [routerLink]="[empire._id, 'edit']" class="select-button user-created mb-1">
+      <div>
+        <h6 style="color: orange">{{ empire.name }}</h6>
+        <h6>{{ empire.type }}</h6>
+        <h6 style="color: aquamarine">{{ empire.species }}</h6>
+      </div>
+    </a>
+  </div>
+</div>
