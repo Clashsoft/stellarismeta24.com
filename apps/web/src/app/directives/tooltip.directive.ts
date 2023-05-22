@@ -1,10 +1,10 @@
-import {Directive, HostListener, Inject, Input} from '@angular/core';
+import {Directive, HostListener, Inject, Input, OnDestroy} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 
 @Directive({
   selector: '[smTooltip]',
 })
-export class TooltipDirective {
+export class TooltipDirective implements OnDestroy {
   @Input() smTooltip!: string;
 
   private container?: HTMLDivElement;
@@ -38,6 +38,14 @@ export class TooltipDirective {
 
   @HostListener('mouseleave')
   onMouseLeave() {
+    this.removeTooltip();
+  }
+
+  ngOnDestroy() {
+    this.removeTooltip();
+  }
+
+  private removeTooltip() {
     if (!this.container) {
       return;
     }
