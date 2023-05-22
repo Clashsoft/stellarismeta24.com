@@ -31,6 +31,9 @@ dependencies:
   bootstrap:
     specifier: ^5.2.3
     version: 5.2.3(@popperjs/core@2.11.7)
+  jomini:
+    specifier: ^0.8.1
+    version: 0.8.1
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -8066,6 +8069,10 @@ packages:
       - '@types/node'
       - supports-color
       - ts-node
+
+  /jomini@0.8.1:
+    resolution: {integrity: sha512-yyE2Xa5uRTYxdlzULOanv7zZVP4MVFp7JXgRt9PE58vdO0z+vFMe00UC4eWkKognRuVsapdBWYvjFm/7VU/BKQ==}
+    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
