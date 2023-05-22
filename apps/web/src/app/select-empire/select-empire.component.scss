@@ -17,3 +17,15 @@
   border-image-slice: 4 fill;
   border-image-source: url('/assets/styles/user_created.png');
 }
+
+.random {
+  background-image: url('/assets/styles/select_random.png');
+}
+
+.new {
+  background-image: url('/assets/styles/select_create_new.png');
+}
+
+.observe {
+  background-image: url('/assets/styles/select_observe.png');
+}

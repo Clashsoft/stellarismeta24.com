@@ -1,11 +1,14 @@
 <div class="row h-100">
   <div class="col-auto plain-bg p-3">
     <h4 class="p-3">Select Empire</h4>
-    <a routerLink="random" class="select-button mb-1" style="background-image: url('/assets/styles/select_random.png')">
+    <a routerLink="random" class="select-button random mb-1" smTooltip="View a random user-submitted Empire">
       Random
     </a>
-    <a routerLink="new" class="select-button mb-1" style="background-image: url('/assets/styles/select_create_new.png')">
+    <a routerLink="new" class="select-button new mb-1" smTooltip="Create a new Empire">
       Create New
+    </a>
+    <a routerLink="gallery" class="select-button observe mb-1" smTooltip="Show Gallery">
+      Observe
     </a>
     <a *ngFor="let empire of empires" [routerLink]="[empire._id, 'edit']" class="select-button user-created mb-1">
       <div>
