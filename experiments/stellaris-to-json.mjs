@@ -1,6 +1,11 @@
 import {Jomini, Writer} from "jomini";
 import fs from "fs";
 
+const FLAT_ARRAY_KEYS = [
+  'ethic',
+  'trait',
+];
+
 const input = fs.readFileSync('./user_empire_designs_v3.4.txt', 'utf8');
 const parser = await Jomini.initialize();
 const out = parser.parseText(input);
@@ -33,7 +38,13 @@ function writeKeyValue(writer, key, value) {
 function writeObject(writer, obj) {
   writer.write_object_start();
   for (const [key, value] of Object.entries(obj)) {
-    writeKeyValue(writer, key, value);
+    if (FLAT_ARRAY_KEYS.includes(key) && Array.isArray(value)) {
+      for (const item of value) {
+        writeKeyValue(writer, key, item);
+      }
+    } else {
+      writeKeyValue(writer, key, value);
+    }
   }
   writer.write_end();
 }

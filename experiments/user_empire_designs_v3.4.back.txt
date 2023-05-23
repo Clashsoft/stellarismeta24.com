@@ -18,9 +18,12 @@
       }
       name_list = "MACHINE1"
       gender = "not_set"
-      trait = {
-        "trait_machine_unit" "trait_robot_emotion_emulators" "trait_robot_mass_produced" "trait_robot_superconductive" "trait_robot_high_maintenance" "trait_robot_high_bandwidth"
-      }
+      trait = "trait_machine_unit"
+      trait = "trait_robot_emotion_emulators"
+      trait = "trait_robot_mass_produced"
+      trait = "trait_robot_superconductive"
+      trait = "trait_robot_high_maintenance"
+      trait = "trait_robot_high_bandwidth"
     }
     secondary_species = {
       class = "LITHOID"
@@ -36,9 +39,11 @@
       }
       name_list = "LITHOID1"
       gender = "not_set"
-      trait = {
-        "trait_lithoid" "trait_lithoid_volatile_excretions" "trait_traditional" "trait_conservational" "trait_repugnant"
-      }
+      trait = "trait_lithoid"
+      trait = "trait_lithoid_volatile_excretions"
+      trait = "trait_traditional"
+      trait = "trait_conservational"
+      trait = "trait_repugnant"
     }
     name = {
       key = "Kelbrid Servitors"
@@ -114,9 +119,9 @@
       species_bio = "Crisis Rush"
       name_list = "FUN2"
       gender = "not_set"
-      trait = {
-        "trait_void_dweller_1" "trait_traditional" "trait_nonadaptive"
-      }
+      trait = "trait_void_dweller_1"
+      trait = "trait_traditional"
+      trait = "trait_nonadaptive"
     }
     name = {
       key = "Nether Breach Initiative"
@@ -166,9 +171,8 @@
     ignore_portrait_duplication = no
     room = "personality_harmonious_hierarchy_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_egalitarian" "ethic_fanatic_spiritualist"
-    }
+    ethic = "ethic_egalitarian"
+    ethic = "ethic_fanatic_spiritualist"
     origin = "origin_void_dwellers"
   }
   "Wilford Industries" = {
@@ -190,9 +194,11 @@
       }
       name_list = "HUMAN1"
       gender = "not_set"
-      trait = {
-        "trait_decadent" "trait_quarrelsome" "trait_communal" "trait_natural_engineers" "trait_charismatic"
-      }
+      trait = "trait_decadent"
+      trait = "trait_quarrelsome"
+      trait = "trait_communal"
+      trait = "trait_natural_engineers"
+      trait = "trait_charismatic"
     }
     name = {
       key = "Wilford Industries"
@@ -246,9 +252,9 @@
     ignore_portrait_duplication = no
     room = "personality_migrating_flock_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_authoritarian" "ethic_xenophobe" "ethic_materialist"
-    }
+    ethic = "ethic_authoritarian"
+    ethic = "ethic_xenophobe"
+    ethic = "ethic_materialist"
     civics = {
       "civic_technocracy" "civic_pleasure_seekers"
     }
@@ -281,9 +287,12 @@
       }
       name_list = "REP3"
       gender = "not_set"
-      trait = {
-        "trait_machine_unit" "trait_robot_logic_engines" "trait_robot_mass_produced" "trait_robot_bulky" "trait_robot_high_bandwidth" "trait_robot_emotion_emulators"
-      }
+      trait = "trait_machine_unit"
+      trait = "trait_robot_logic_engines"
+      trait = "trait_robot_mass_produced"
+      trait = "trait_robot_bulky"
+      trait = "trait_robot_high_bandwidth"
+      trait = "trait_robot_emotion_emulators"
     }
     secondary_species = {
       class = "REP"
@@ -307,9 +316,12 @@
       }
       name_list = "REP3"
       gender = "not_set"
-      trait = {
-        "trait_cybernetic" "trait_ingenious" "trait_industrious" "trait_slow_breeders" "trait_repugnant" "trait_agrarian"
-      }
+      trait = "trait_cybernetic"
+      trait = "trait_ingenious"
+      trait = "trait_industrious"
+      trait = "trait_slow_breeders"
+      trait = "trait_repugnant"
+      trait = "trait_agrarian"
     }
     name = {
       key = "Frame Shift Drive"
@@ -389,9 +401,11 @@
       }
       name_list = "HUM1"
       gender = "not_set"
-      trait = {
-        "trait_intelligent" "trait_artificial_intelligence" "trait_elevated_synapses" "trait_solitary" "trait_unruly"
-      }
+      trait = "trait_intelligent"
+      trait = "trait_artificial_intelligence"
+      trait = "trait_elevated_synapses"
+      trait = "trait_solitary"
+      trait = "trait_unruly"
     }
     name = {
       key = "Big Brain Time"
@@ -445,9 +459,8 @@
     ignore_portrait_duplication = no
     room = "default_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_egalitarian" "ethic_fanatic_materialist"
-    }
+    ethic = "ethic_egalitarian"
+    ethic = "ethic_fanatic_materialist"
     civics = {
       "civic_technocracy" "civic_meritocracy"
     }
@@ -483,9 +496,12 @@
       }
       name_list = "PLANT2"
       gender = "indeterminable"
-      trait = {
-        "trait_survivor" "trait_plantoid_radiotrophic" "trait_adaptive" "trait_unruly" "trait_natural_engineers" "trait_solitary"
-      }
+      trait = "trait_survivor"
+      trait = "trait_plantoid_radiotrophic"
+      trait = "trait_adaptive"
+      trait = "trait_unruly"
+      trait = "trait_natural_engineers"
+      trait = "trait_solitary"
     }
     name = {
       key = "Radio Ga Ga"
@@ -554,9 +570,8 @@
     ignore_portrait_duplication = no
     room = "necroids_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_fanatic_militarist" "ethic_materialist"
-    }
+    ethic = "ethic_fanatic_militarist"
+    ethic = "ethic_materialist"
     civics = {
       "civic_relentless_industrialists" "civic_technocracy"
     }
@@ -592,9 +607,11 @@
       }
       name_list = "HUM2"
       gender = "not_set"
-      trait = {
-        "trait_strong" "trait_intelligent" "trait_solitary" "trait_enduring" "trait_sedentary"
-      }
+      trait = "trait_strong"
+      trait = "trait_intelligent"
+      trait = "trait_solitary"
+      trait = "trait_enduring"
+      trait = "trait_sedentary"
     }
     name = {
       key = "format.imp_enl.3"
@@ -697,9 +714,9 @@
     ignore_portrait_duplication = no
     room = "personality_hegemonic_imperialists_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_xenophile" "ethic_militarist" "ethic_materialist"
-    }
+    ethic = "ethic_xenophile"
+    ethic = "ethic_militarist"
+    ethic = "ethic_materialist"
     civics = {
       "civic_philosopher_king" "civic_distinguished_admiralty"
     }
@@ -727,9 +744,12 @@
       }
       name_list = "HUMAN1"
       gender = "not_set"
-      trait = {
-        "trait_cave_dweller" "trait_unruly" "trait_solitary" "trait_noxious" "trait_traditional" "trait_ingenious"
-      }
+      trait = "trait_cave_dweller"
+      trait = "trait_unruly"
+      trait = "trait_solitary"
+      trait = "trait_noxious"
+      trait = "trait_traditional"
+      trait = "trait_ingenious"
     }
     name = {
       key = "Average Genshin Impact Enjoyers"
@@ -798,9 +818,9 @@
     ignore_portrait_duplication = no
     room = "default_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_xenophobe" "ethic_pacifist" "ethic_materialist"
-    }
+    ethic = "ethic_xenophobe"
+    ethic = "ethic_pacifist"
+    ethic = "ethic_materialist"
     civics = {
       "civic_inwards_perfection" "civic_pleasure_seekers"
     }
@@ -836,9 +856,12 @@
       }
       name_list = "MAM2"
       gender = "not_set"
-      trait = {
-        "trait_hive_mind" "trait_rapid_breeders" "trait_preplanned_growth" "trait_enduring" "trait_unruly" "trait_sedentary"
-      }
+      trait = "trait_hive_mind"
+      trait = "trait_rapid_breeders"
+      trait = "trait_preplanned_growth"
+      trait = "trait_enduring"
+      trait = "trait_unruly"
+      trait = "trait_sedentary"
     }
     name = {
       key = "Not Single Simulator"
@@ -935,9 +958,12 @@
       }
       name_list = "MACHINE1"
       gender = "not_set"
-      trait = {
-        "trait_machine_unit" "trait_robot_uncanny" "trait_robot_mass_produced" "trait_robot_recycled" "trait_robot_high_bandwidth" "trait_robot_durable"
-      }
+      trait = "trait_machine_unit"
+      trait = "trait_robot_uncanny"
+      trait = "trait_robot_mass_produced"
+      trait = "trait_robot_recycled"
+      trait = "trait_robot_high_bandwidth"
+      trait = "trait_robot_durable"
     }
     secondary_species = {
       class = "TOX"
@@ -956,9 +982,11 @@
       }
       name_list = "TOX1"
       gender = "not_set"
-      trait = {
-        "trait_charismatic" "trait_traditional" "trait_slow_learners" "trait_rapid_breeders" "trait_unruly"
-      }
+      trait = "trait_charismatic"
+      trait = "trait_traditional"
+      trait = "trait_slow_learners"
+      trait = "trait_rapid_breeders"
+      trait = "trait_unruly"
     }
     name = {
       key = "Pasc-Al Keepers"
@@ -1048,9 +1076,11 @@
       }
       name_list = "HUM2"
       gender = "not_set"
-      trait = {
-        "trait_natural_engineers" "trait_intelligent" "trait_unruly" "trait_solitary" "trait_incubator"
-      }
+      trait = "trait_natural_engineers"
+      trait = "trait_intelligent"
+      trait = "trait_unruly"
+      trait = "trait_solitary"
+      trait = "trait_incubator"
     }
     name = {
       key = "Die Schlauen Füchse"
@@ -1124,9 +1154,8 @@
     ignore_portrait_duplication = no
     room = "toxoids_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_egalitarian" "ethic_fanatic_materialist"
-    }
+    ethic = "ethic_egalitarian"
+    ethic = "ethic_fanatic_materialist"
     civics = {
       "civic_eager_explorers" "civic_technocracy"
     }
@@ -1159,9 +1188,11 @@
       }
       name_list = "HUM1"
       gender = "not_set"
-      trait = {
-        "trait_intelligent" "trait_thrifty" "trait_unruly" "trait_solitary" "trait_traditional"
-      }
+      trait = "trait_intelligent"
+      trait = "trait_thrifty"
+      trait = "trait_unruly"
+      trait = "trait_solitary"
+      trait = "trait_traditional"
     }
     name = {
       key = "%ADJECTIVE%"
@@ -1234,9 +1265,8 @@
     ignore_portrait_duplication = no
     room = "default_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_fanatic_egalitarian" "ethic_xenophile"
-    }
+    ethic = "ethic_fanatic_egalitarian"
+    ethic = "ethic_xenophile"
     civics = {
       "civic_shared_burden" "civic_merchant_guilds"
     }
@@ -1372,9 +1402,11 @@
       }
       name_list = "TOX1"
       gender = "not_set"
-      trait = {
-        "trait_intelligent" "trait_rapid_breeders" "trait_unruly" "trait_solitary" "trait_strong"
-      }
+      trait = "trait_intelligent"
+      trait = "trait_rapid_breeders"
+      trait = "trait_unruly"
+      trait = "trait_solitary"
+      trait = "trait_strong"
     }
     name = {
       key = "Oxanalytoran Star Empire"
@@ -1448,9 +1480,8 @@
     ignore_portrait_duplication = no
     room = "default_room"
     spawn_enabled = no
-    ethic = {
-      "ethic_authoritarian" "ethic_fanatic_militarist"
-    }
+    ethic = "ethic_authoritarian"
+    ethic = "ethic_fanatic_militarist"
     civics = {
       "civic_warrior_culture" "civic_crusader_spirit"
     }
@@ -1483,9 +1514,13 @@
       }
       name_list = "LITHOID2"
       gender = "not_set"
-      trait = {
-        "trait_lithoid" "trait_hive_mind" "trait_cave_dweller" "trait_incubator" "trait_solitary" "trait_sedentary" "trait_intelligent"
-      }
+      trait = "trait_lithoid"
+      trait = "trait_hive_mind"
+      trait = "trait_cave_dweller"
+      trait = "trait_incubator"
+      trait = "trait_solitary"
+      trait = "trait_sedentary"
+      trait = "trait_intelligent"
     }
     name = {
       key = "%ADJECTIVE%"
@@ -1605,9 +1640,11 @@
       }
       name_list = "ART2"
       gender = "not_set"
-      trait = {
-        "trait_rapid_breeders" "trait_intelligent" "trait_unruly" "trait_solitary" "trait_conservational"
-      }
+      trait = "trait_rapid_breeders"
+      trait = "trait_intelligent"
+      trait = "trait_unruly"
+      trait = "trait_solitary"
+      trait = "trait_conservational"
     }
     name = {
       key = "Reign of Shadows"
@@ -1668,9 +1705,8 @@
     ignore_portrait_duplication = no
     room = "personality_democratic_crusaders_room"
     spawn_enabled = yes
-    ethic = {
-      "ethic_xenophobe" "ethic_fanatic_militarist"
-    }
+    ethic = "ethic_xenophobe"
+    ethic = "ethic_fanatic_militarist"
     civics = {
       "civic_barbaric_despoilers" "civic_feudal_realm"
     }
@@ -1698,9 +1734,11 @@
       }
       name_list = "HUMAN1"
       gender = "not_set"
-      trait = {
-        "trait_intelligent" "trait_slow_breeders" "trait_very_strong" "trait_unruly" "trait_enduring"
-      }
+      trait = "trait_intelligent"
+      trait = "trait_slow_breeders"
+      trait = "trait_very_strong"
+      trait = "trait_unruly"
+      trait = "trait_enduring"
     }
     secondary_species = {
       class = "HUM"
@@ -1719,9 +1757,11 @@
       }
       name_list = "HUMAN1"
       gender = "not_set"
-      trait = {
-        "trait_syncretic_proles" "trait_fleeting" "trait_docile" "trait_rapid_breeders" "trait_nonadaptive"
-      }
+      trait = "trait_syncretic_proles"
+      trait = "trait_fleeting"
+      trait = "trait_docile"
+      trait = "trait_rapid_breeders"
+      trait = "trait_nonadaptive"
     }
     name = {
       key = "Vought International"
@@ -1785,9 +1825,9 @@
     ignore_portrait_duplication = no
     room = "runic_room"
     spawn_enabled = yes
-    ethic = {
-      "ethic_authoritarian" "ethic_militarist" "ethic_materialist"
-    }
+    ethic = "ethic_authoritarian"
+    ethic = "ethic_militarist"
+    ethic = "ethic_materialist"
     civics = {
       "civic_private_healthcare_corporate" "civic_media_conglomerate"
     }
