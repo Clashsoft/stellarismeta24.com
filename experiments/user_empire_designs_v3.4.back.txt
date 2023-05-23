@@ -17,7 +17,7 @@
         key = "Kelbran"
       }
       name_list = "MACHINE1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_machine_unit"
       trait = "trait_robot_emotion_emulators"
       trait = "trait_robot_mass_produced"
@@ -38,7 +38,7 @@
         key = "Pliff-Plaff"
       }
       name_list = "LITHOID1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_lithoid"
       trait = "trait_lithoid_volatile_excretions"
       trait = "trait_traditional"
@@ -77,7 +77,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = 1
@@ -118,7 +118,7 @@
       }
       species_bio = "Crisis Rush"
       name_list = "FUN2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_void_dweller_1"
       trait = "trait_traditional"
       trait = "trait_nonadaptive"
@@ -155,7 +155,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "Vagorileem"
@@ -193,7 +193,7 @@
         key = "Human"
       }
       name_list = "HUMAN1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_decadent"
       trait = "trait_quarrelsome"
       trait = "trait_communal"
@@ -232,7 +232,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "Joseph Wilford"
@@ -286,7 +286,7 @@
         }
       }
       name_list = "REP3"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_machine_unit"
       trait = "trait_robot_logic_engines"
       trait = "trait_robot_mass_produced"
@@ -315,7 +315,7 @@
         }
       }
       name_list = "REP3"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_cybernetic"
       trait = "trait_ingenious"
       trait = "trait_industrious"
@@ -357,7 +357,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "REP3_CHR_Duxanek"
@@ -400,7 +400,7 @@
         literal = yes
       }
       name_list = "HUM1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_intelligent"
       trait = "trait_artificial_intelligence"
       trait = "trait_elevated_synapses"
@@ -443,7 +443,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "HUM1_CHR_Darmug"
@@ -495,7 +495,7 @@
         }
       }
       name_list = "PLANT2"
-      gender = "indeterminable"
+      gender = indeterminable
       trait = "trait_survivor"
       trait = "trait_plantoid_radiotrophic"
       trait = "trait_adaptive"
@@ -539,7 +539,7 @@
       }
     }
     ruler = {
-      gender = "indeterminable"
+      gender = indeterminable
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -606,7 +606,7 @@
         }
       }
       name_list = "HUM2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_strong"
       trait = "trait_intelligent"
       trait = "trait_solitary"
@@ -683,7 +683,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -743,7 +743,7 @@
         literal = yes
       }
       name_list = "HUMAN1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_cave_dweller"
       trait = "trait_unruly"
       trait = "trait_solitary"
@@ -787,7 +787,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -855,7 +855,7 @@
         }
       }
       name_list = "MAM2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_hive_mind"
       trait = "trait_rapid_breeders"
       trait = "trait_preplanned_growth"
@@ -899,7 +899,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -957,7 +957,7 @@
         literal = yes
       }
       name_list = "MACHINE1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_machine_unit"
       trait = "trait_robot_uncanny"
       trait = "trait_robot_mass_produced"
@@ -981,7 +981,7 @@
         literal = yes
       }
       name_list = "TOX1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_charismatic"
       trait = "trait_traditional"
       trait = "trait_slow_learners"
@@ -1024,7 +1024,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "MACHINE1_RULER_Setun"
@@ -1075,7 +1075,7 @@
         }
       }
       name_list = "HUM2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_natural_engineers"
       trait = "trait_intelligent"
       trait = "trait_unruly"
@@ -1123,7 +1123,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -1187,7 +1187,7 @@
         }
       }
       name_list = "HUM1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_intelligent"
       trait = "trait_thrifty"
       trait = "trait_unruly"
@@ -1248,7 +1248,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "HUM1_CHR_Campramara"
@@ -1298,7 +1298,7 @@
         }
       }
       name_list = "HUM1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_hive_mind"
     }
     name = {
@@ -1355,7 +1355,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "HUM1_CHR_Shibbala"
@@ -1401,7 +1401,7 @@
         }
       }
       name_list = "TOX1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_intelligent"
       trait = "trait_rapid_breeders"
       trait = "trait_unruly"
@@ -1449,7 +1449,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "%LEADER_1%"
@@ -1513,7 +1513,7 @@
         }
       }
       name_list = "LITHOID2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_lithoid"
       trait = "trait_hive_mind"
       trait = "trait_cave_dweller"
@@ -1576,7 +1576,7 @@
       }
     }
     ruler = {
-      gender = "female"
+      gender = female
       name = {
         full_names = {
           key = "%LEADER_2%"
@@ -1639,7 +1639,7 @@
         }
       }
       name_list = "ART2"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_rapid_breeders"
       trait = "trait_intelligent"
       trait = "trait_unruly"
@@ -1688,7 +1688,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "ART2_CHR_Obr-Pwot"
@@ -1733,7 +1733,7 @@
         literal = yes
       }
       name_list = "HUMAN1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_intelligent"
       trait = "trait_slow_breeders"
       trait = "trait_very_strong"
@@ -1756,7 +1756,7 @@
         literal = yes
       }
       name_list = "HUMAN1"
-      gender = "not_set"
+      gender = not_set
       trait = "trait_syncretic_proles"
       trait = "trait_fleeting"
       trait = "trait_docile"
@@ -1807,7 +1807,7 @@
       }
     }
     ruler = {
-      gender = "male"
+      gender = male
       name = {
         full_names = {
           key = "Homelander"

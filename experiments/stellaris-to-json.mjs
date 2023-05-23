@@ -5,6 +5,9 @@ const FLAT_ARRAY_KEYS = [
   'ethic',
   'trait',
 ];
+const UNQUOTED_KEYS = [
+  'gender',
+];
 
 const input = fs.readFileSync('./user_empire_designs_v3.4.txt', 'utf8');
 const parser = await Jomini.initialize();
@@ -28,7 +31,7 @@ function writeKeyValue(writer, key, value) {
     writer.write_quoted(key);
   }
   writer.write_operator('=');
-  writeAny(writer, value);
+  writeAny(writer, value, key);
 }
 
 /**
@@ -64,13 +67,18 @@ function writeArray(writer, obj) {
 /**
  * @param writer {Writer}
  * @param obj {any}
+ * @param key {string}
  */
-function writeAny(writer, obj) {
+function writeAny(writer, obj, key = undefined) {
   if (Array.isArray(obj)) {
     writeArray(writer, obj);
   } else switch (typeof obj) {
     case 'string':
-      writer.write_quoted(obj);
+      if (UNQUOTED_KEYS.includes(key)) {
+        writer.write_unquoted(obj);
+      } else {
+        writer.write_quoted(obj);
+      }
       break;
     case 'number':
       if (Number.isInteger(obj)) {
