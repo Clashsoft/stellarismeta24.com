@@ -1,6 +1,7 @@
 import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
 import {Types} from "mongoose";
-import {Schema} from "@nestjs/mongoose";
+import {Schema, SchemaFactory} from "@nestjs/mongoose";
+import {Doc} from "@mean-stream/nestx";
 
 export interface Translatable {
   key: string;
@@ -96,3 +97,6 @@ export class Empire {
   @ApiProperty()
   design!: EmpireDesign;
 }
+
+export const EmpireSchema = SchemaFactory.createForClass(Empire);
+export type EmpireDoc = Doc<Empire>;
