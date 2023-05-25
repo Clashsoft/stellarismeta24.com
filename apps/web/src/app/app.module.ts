@@ -6,6 +6,7 @@ import {appRoutes} from './app.routes';
 import {EditEmpireComponent} from './edit-empire/edit-empire.component';
 import {TooltipDirective} from './directives/tooltip.directive';
 import {SelectEmpireComponent} from './select-empire/select-empire.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {SelectEmpireComponent} from './select-empire/select-empire.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
   ],
   providers: [],
