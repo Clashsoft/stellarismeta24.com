@@ -10,12 +10,15 @@
     <a routerLink="gallery" class="select-button observe mb-1" smTooltip="Show Gallery">
       Observe
     </a>
-    <a *ngFor="let empire of empires" [routerLink]="[empire._id, 'edit']" class="select-button user-created mb-1">
+    <a *ngFor="let empire of empires" [routerLink]="empire._id" class="select-button user-created mb-1">
       <div>
         <h6 style="color: orange">{{ empire.design.name.key }}</h6>
         <h6>{{ empire.design.government }}</h6>
         <h6 style="color: aquamarine">{{ empire.design.species.class }}</h6>
       </div>
     </a>
+  </div>
+  <div class="col d-flex align-items-center justify-content-center">
+    <router-outlet></router-outlet>
   </div>
 </div>
