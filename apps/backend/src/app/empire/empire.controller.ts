@@ -3,9 +3,10 @@ import {EmpireService} from './empire.service';
 import {CreateEmpireDto, Empire} from "@stellarismeta24.com/types";
 import {NotFound, ObjectIdPipe} from "@mean-stream/nestx";
 import {Types} from "mongoose";
-import {ApiCreatedResponse, ApiOkResponse} from "@nestjs/swagger";
+import {ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 
-@Controller('empire')
+@Controller('empires')
+@ApiTags('Empires')
 export class EmpireController {
   constructor(
     private readonly empireService: EmpireService,
