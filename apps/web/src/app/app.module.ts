@@ -8,6 +8,7 @@ import { TooltipDirective } from './directives/tooltip.directive';
 import { SelectEmpireComponent } from './select-empire/select-empire.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmpirePreviewComponent } from './empire-preview/empire-preview.component';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { EmpirePreviewComponent } from './empire-preview/empire-preview.componen
     TooltipDirective,
     SelectEmpireComponent,
     EmpirePreviewComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,
