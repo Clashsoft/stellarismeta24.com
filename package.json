@@ -4,7 +4,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "serve:web": "nx serve web"
+    "serve:web": "nx serve web",
+    "serve:backend": "nx serve backend"
   },
   "dependencies": {
     "@angular/animations": "~16.0.0",
