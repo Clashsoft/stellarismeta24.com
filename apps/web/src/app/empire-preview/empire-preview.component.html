@@ -3,6 +3,7 @@
     {{ empire.design.name.key }}
   </h4>
   <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
+  <img *ngFor="let civic of empire.design.civics" src="/assets/civics/{{ civic }}.png" width="29" height="29">
   <pre>
     Government: {{ empire.design.government }}
     Authority: {{ empire.design.authority }}
