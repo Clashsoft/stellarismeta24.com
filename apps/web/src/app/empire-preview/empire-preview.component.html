@@ -1,24 +1,52 @@
-<div class="plain-bg" style="width: 640px; height: 480px;">
+<div class="plain-bg p-3" style="width: 640px; height: 480px;">
   <h4 class="text-center title-glow" style="width: 320px">
     {{ empire.design.name.key }}
   </h4>
-  <img src="/assets/planets/{{ empire.design.planet_class }}.png" width="180" height="180">
-  <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
-  <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
-  <img *ngFor="let civic of empire.design.civics" src="/assets/civics/{{ civic }}.png" width="29" height="29">
-  <img *ngFor="let ethic of [empire.design.ethic].flat()" src="/assets/ethics/{{ ethic }}.png" width="29" height="29">
-  <img *ngFor="let trait of [empire.design.species.trait].flat()" src="/assets/traits/{{ trait }}.png" width="29" height="29">
-  <pre>
-    Government: {{ empire.design.government }}
-    Authority: {{ empire.design.authority }}
-    Civics: {{ empire.design.civics }}
-    Ethics: {{ empire.design.ethic }}
-  </pre>
-  <pre>
-    Species Name: {{ empire.design.species.species_name.key }}
-    Species Type: {{ empire.design.species.class }}
-    Traits: {{ empire.design.species.trait }}
-  </pre>
+  <div class="text-center">
+    <h5 style="color: orange">{{ empire.design.planet_name.key }}</h5>
+    <img src="/assets/planets/{{ empire.design.planet_class }}.png" width="120" height="120">
+    <h5>{{ empire.design.planet_class }}</h5>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="text-center">
+        <h5>{{ empire.design.government }}</h5>
+        <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
+        <h5>{{ empire.design.authority }}</h5>
+      </div>
+      <ul class="list-unstyled">
+        <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center">
+          <img src="/assets/civics/{{ civic }}.png" width="29" height="29">
+          {{ civic }}
+        </li>
+      </ul>
+      <ul class="list-unstyled">
+        <li *ngFor="let ethic of [empire.design.ethic].flat()" class="d-flex align-items-center">
+          <img src="/assets/ethics/{{ ethic }}.png" width="29" height="29">
+          {{ ethic }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <h5>{{ empire.design.species.species_name.key }}</h5>
+      <h6 style="color: aquamarine">{{ empire.design.species.class }}</h6>
+      <ul class="list-unstyled">
+        <li *ngFor="let trait of [empire.design.species.trait].flat()" class="d-flex align-items-center">
+          <img src="/assets/traits/{{ trait }}.png" width="29" height="29">
+          {{ trait }}
+        </li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="d-flex align-items-center">
+        <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
+        <h5>{{ empire.design.origin }}</h5>
+      </div>
+      <p style="color: aquamarine">
+        {{ empire.design.species.species_bio }}
+      </p>
+    </div>
+  </div>
   <a class="btn" routerLink="edit">
     Edit
   </a>
