@@ -15,6 +15,7 @@
     "@angular/platform-browser": "~16.0.0",
     "@angular/platform-browser-dynamic": "~16.0.0",
     "@angular/router": "~16.0.0",
+    "@mean-stream/nestx": "^0.7.2",
     "@nestjs/mongoose": "^9.2.2",
     "@nestjs/swagger": "^6.3.0",
     "@nx/angular": "16.2.1",
