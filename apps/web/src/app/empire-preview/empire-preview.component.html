@@ -1,5 +1,19 @@
 <div class="plain-bg" style="width: 640px; height: 480px;">
-  <h4 class="position-absolute text-center title-glow" style="top: 0; left: 40px; width: 320px">
+  <h4 class="text-center title-glow" style="width: 320px">
     {{ empire.design.name.key }}
   </h4>
+  <pre>
+    Government: {{ empire.design.government }}
+    Authority: {{ empire.design.authority }}
+    Civics: {{ empire.design.civics }}
+    Ethics: {{ empire.design.ethic }}
+  </pre>
+  <pre>
+    Species Name: {{ empire.design.species.species_name.key }}
+    Species Type: {{ empire.design.species.class }}
+    Traits: {{ empire.design.species.trait }}
+  </pre>
+  <a class="btn" routerLink="edit">
+    Edit
+  </a>
 </div>
