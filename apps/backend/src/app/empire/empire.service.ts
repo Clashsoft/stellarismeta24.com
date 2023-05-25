@@ -18,6 +18,10 @@ export class EmpireService {
     return this.model.find().exec();
   }
 
+  async findRandom(): Promise<EmpireDoc> {
+    return (await this.model.aggregate([{$sample: {size: 1}}]).exec())[0];
+  }
+
   async findOne(id: Types.ObjectId): Promise<EmpireDoc | null> {
     return this.model.findById(id).exec();
   }

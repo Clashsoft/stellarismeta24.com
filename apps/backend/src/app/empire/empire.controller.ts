@@ -25,6 +25,12 @@ export class EmpireController {
     return this.empireService.findAll();
   }
 
+  @Get('random')
+  @ApiOkResponse({type: Empire})
+  async findRandom(): Promise<Empire> {
+    return this.empireService.findRandom();
+  }
+
   @Get(':id')
   @ApiOkResponse({type: Empire})
   @NotFound()
