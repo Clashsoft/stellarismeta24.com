@@ -3,6 +3,7 @@
     {{ empire.design.name.key }}
   </h4>
   <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
+  <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
   <img *ngFor="let civic of empire.design.civics" src="/assets/civics/{{ civic }}.png" width="29" height="29">
   <img *ngFor="let ethic of [empire.design.ethic].flat()" src="/assets/ethics/{{ ethic }}.png" width="29" height="29">
   <img *ngFor="let trait of [empire.design.species.trait].flat()" src="/assets/traits/{{ trait }}.png" width="29" height="29">
