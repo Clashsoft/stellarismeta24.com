@@ -1,3 +1,7 @@
+import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
+import {Types} from "mongoose";
+import {Schema} from "@nestjs/mongoose";
+
 export interface Translatable {
   key: string;
   literal?: boolean;
@@ -46,7 +50,7 @@ export interface Flag {
   colors: string[];
 }
 
-export interface Empire {
+export interface EmpireDesign {
   key: string;
   ship_prefix: Translatable;
   species: Species;
@@ -71,4 +75,24 @@ export interface Empire {
   ethic: string | string[];
   civics?: string[];
   origin: string;
+}
+
+export type CustomEmpireDesigns = Record<string, EmpireDesign>;
+
+@Schema()
+export class Empire {
+  @ApiProperty()
+  _id!: Types.ObjectId;
+
+  @ApiPropertyOptional()
+  name?: string;
+
+  @ApiPropertyOptional()
+  description?: string;
+
+  @ApiProperty()
+  tags!: string[];
+
+  @ApiProperty()
+  design!: EmpireDesign;
 }
