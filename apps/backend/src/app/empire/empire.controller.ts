@@ -33,6 +33,12 @@ export class EmpireController {
     return this.empireService.findRandom();
   }
 
+  @Get('tags')
+  @ApiOkResponse({type: [String]})
+  async findTags(): Promise<string[]> {
+    return this.empireService.findTags();
+  }
+
   @Get(':id')
   @ApiOkResponse({type: Empire})
   @NotFound()

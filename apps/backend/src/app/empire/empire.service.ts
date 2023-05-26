@@ -32,6 +32,10 @@ export class EmpireService {
     return this.model.findById(id).exec();
   }
 
+  async findTags(): Promise<string[]> {
+    return this.model.distinct('tags').exec();
+  }
+
   async remove(id: Types.ObjectId): Promise<EmpireDoc | null> {
     return this.model.findByIdAndDelete(id).exec();
   }
