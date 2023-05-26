@@ -35,7 +35,9 @@
     </div>
     <div class="col-4">
       <h5>{{ empire.design.species.species_name.key }}</h5>
-      <h6 style="color: aquamarine">{{ empire.design.species.class }}</h6>
+      <h6 style="color: aquamarine" [smTooltip]="empire.design.species.class + '_desc' | translate">
+        {{ empire.design.species.class | translate }}
+      </h6>
       <ul class="list-unstyled">
         <li *ngFor="let trait of [empire.design.species.trait].flat()" class="d-flex align-items-center" [smTooltip]="trait + '_desc' | translate">
           <img src="/assets/traits/{{ trait }}.png" width="29" height="29">
