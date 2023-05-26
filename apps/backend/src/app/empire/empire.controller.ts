@@ -66,7 +66,6 @@ export class EmpireController {
     if (tags) {
       result.tags = {$all: tags};
     }
-    console.log(result);
     return result;
   }
 }
