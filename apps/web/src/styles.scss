@@ -102,11 +102,9 @@ body {
 }
 
 .select-button {
-  display: flex;
+  display: block;
   width: 280px;
   height: 85px;
-  align-items: center;
-  justify-content: center;
   color: white !important;
   text-decoration: none;
 }
