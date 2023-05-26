@@ -6,6 +6,10 @@ import {translate, TranslationKey} from "./translate";
 })
 export class TranslatePipe implements PipeTransform {
   transform(key: TranslationKey | string): string {
-    return translate(key);
+    let translated = translate(key);
+    while (translated.includes('$')) {
+      translated = translated.replace(/\$([\w_]+)\$/g, (_, key) => translate(key));
+    }
+    return translated;
   }
 }
