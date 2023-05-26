@@ -109,6 +109,14 @@ body {
   text-decoration: none;
 }
 
+.select-button.selected {
+  // border: 24px solid;
+  border-image-source: url('assets/styles/select_button_hover.png');
+  border-image-slice: 24 fill;
+  border-image-outset: 12px;
+  border-image-width: 24px;
+}
+
 .select-button h6 {
   margin-bottom: 0;
 }
