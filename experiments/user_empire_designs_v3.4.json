@@ -87,7 +87,7 @@
       "gender": "female",
       "name": {
         "full_names": {
-          "key": 1
+          "key": "01"
         }
       },
       "portrait": "lith_machine",
@@ -589,13 +589,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "PLANT2_CHR_Ebony"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "PLANT2_CHR_Pod"
               }
@@ -741,13 +741,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "HUM2_CHR_Junak"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "HUM2_CHR_Nik"
               }
@@ -853,13 +853,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "HUMAN1_CHR_Carol"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "HUMAN1_CHR_Reid"
               }
@@ -973,13 +973,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "MAM2_CHR_Pendirm"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "MAM2_CHR_denArmok"
               }
@@ -1211,13 +1211,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "HUM2_CHR_Rald"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "HUM2_CHR_Kap"
               }
@@ -1291,7 +1291,7 @@
           }
         },
         {
-          "key": 1,
+          "key": "1",
           "value": {
             "key": "Solidarity"
           }
@@ -1404,7 +1404,7 @@
           }
         },
         {
-          "key": 1,
+          "key": "1",
           "value": {
             "key": "Hive"
           }
@@ -1556,13 +1556,13 @@
           "key": "%LEADER_1%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "TOX1_CHA_Nitrogus"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "TOX1_CHA_Chadwack"
               }
@@ -1638,7 +1638,7 @@
           }
         },
         {
-          "key": 1,
+          "key": "1",
           "value": {
             "key": "Unity"
           }
@@ -1691,13 +1691,13 @@
           "key": "%LEADER_2%",
           "variables": [
             {
-              "key": 1,
+              "key": "1",
               "value": {
                 "key": "LITHOID2_CHR_Vyx"
               }
             },
             {
-              "key": 2,
+              "key": "2",
               "value": {
                 "key": "LITHOID2_CHR_Onit"
               }

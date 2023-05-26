@@ -11,7 +11,9 @@ const UNQUOTED_KEYS = [
 
 const input = fs.readFileSync('./user_empire_designs_v3.4.txt', 'utf8');
 const parser = await Jomini.initialize();
-const out = parser.parseText(input);
+const out = parser.parseText(input, {
+  typeNarrowing: 'unquoted',
+});
 fs.writeFileSync('./user_empire_designs_v3.4.json', JSON.stringify(out, null, 2));
 
 const result = parser.write((writer) => {
