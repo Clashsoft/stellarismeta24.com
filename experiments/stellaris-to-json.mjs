@@ -17,7 +17,7 @@ const out = parser.parseText(input, {
 fs.writeFileSync('./user_empire_designs_v3.4.json', JSON.stringify(out, null, 2));
 
 const result = parser.write((writer) => {
-  writeAny(writer, out);
+  writeEntries(writer, out);
 });
 fs.writeFileSync('./user_empire_designs_v3.4.back.txt', result);
 
@@ -42,6 +42,15 @@ function writeKeyValue(writer, key, value) {
  */
 function writeObject(writer, obj) {
   writer.write_object_start();
+  writeEntries(writer, obj);
+  writer.write_end();
+}
+
+/**
+ * @param writer {Writer}
+ * @param obj {object}
+ */
+function writeEntries(writer, obj) {
   for (const [key, value] of Object.entries(obj)) {
     if (FLAT_ARRAY_KEYS.includes(key) && Array.isArray(value)) {
       for (const item of value) {
@@ -51,7 +60,6 @@ function writeObject(writer, obj) {
       writeKeyValue(writer, key, value);
     }
   }
-  writer.write_end();
 }
 
 /**
