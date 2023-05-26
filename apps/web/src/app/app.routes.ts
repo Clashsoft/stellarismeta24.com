@@ -3,6 +3,7 @@ import {EditEmpireComponent} from "./edit-empire/edit-empire.component";
 import {SelectEmpireComponent} from "./select-empire/select-empire.component";
 import {EmpirePreviewComponent} from "./empire-preview/empire-preview.component";
 import {StartComponent} from "./start/start.component";
+import {ImportEmpiresComponent} from "./import-empires/import-empires.component";
 
 export const appRoutes: Route[] = [
   {
@@ -17,6 +18,7 @@ export const appRoutes: Route[] = [
     component: SelectEmpireComponent,
     children: [
       {path: '', component: StartComponent},
+      {path: 'import', component: ImportEmpiresComponent},
       {path: ':id', component: EmpirePreviewComponent},
     ],
   },

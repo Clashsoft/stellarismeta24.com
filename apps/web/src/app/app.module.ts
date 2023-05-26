@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmpirePreviewComponent } from './empire-preview/empire-preview.component';
 import { StartComponent } from './start/start.component';
 import { EmpireItemComponent } from './empire-item/empire-item.component';
+import { ImportEmpiresComponent } from './import-empires/import-empires.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { EmpireItemComponent } from './empire-item/empire-item.component';
     EmpirePreviewComponent,
     StartComponent,
     EmpireItemComponent,
+    ImportEmpiresComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

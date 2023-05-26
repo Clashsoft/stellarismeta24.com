@@ -1,4 +1,4 @@
-<a [routerLink]="empire._id" class="select-button user-created">
+<a [routerLink]="empire._id || undefined" class="select-button user-created">
   <div>
     <h6 style="color: orange">{{ empire.design.name.key }}</h6>
     <h6>{{ empire.design.government }}</h6>

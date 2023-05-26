@@ -1,0 +1,21 @@
+<div class="plain-bg p-3 d-flex flex-column" style="height: 90vh">
+  <h4>Import Empires</h4>
+  <p>
+    Import your <code>user_empire_designs_v3.4.txt</code> file here, or paste partial contents in the text field.
+  </p>
+  <div class="mb-3">
+    <label for="file" class="form-label">Upload file</label>
+    <input #file class="form-control" type="file" id="file" accept="text/plain" (change)="readFile(file.files?.item(0))">
+  </div>
+  <div class="mb-3">
+    <label for="area" class="form-label">Paste file contents</label>
+    <textarea class="form-control" id="area" rows="6" [(ngModel)]="content" (change)="readContent()"></textarea>
+  </div>
+  <h5>Found Empires</h5>
+  <div class="overflow-auto">
+    <sm-empire-item *ngFor="let empire of empires" [empire]="empire" (click)="import(empire)"></sm-empire-item>
+  </div>
+  <div class="form-text">
+    Click to import a result.
+  </div>
+</div>
