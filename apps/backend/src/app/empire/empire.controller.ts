@@ -1,6 +1,6 @@
 import {Body, Controller, Delete, Get, Param, Post,} from '@nestjs/common';
 import {EmpireService} from './empire.service';
-import {CreateEmpireDto, Empire} from "@stellarismeta24.com/types";
+import {CreateEmpire, Empire} from "@stellarismeta24.com/types";
 import {NotFound, ObjectIdPipe} from "@mean-stream/nestx";
 import {Types} from "mongoose";
 import {ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
@@ -15,7 +15,7 @@ export class EmpireController {
 
   @Post()
   @ApiCreatedResponse({type: Empire})
-  create(@Body() createEmpireDto: CreateEmpireDto) {
+  create(@Body() createEmpireDto: CreateEmpire) {
     return this.empireService.create(createEmpireDto);
   }
 

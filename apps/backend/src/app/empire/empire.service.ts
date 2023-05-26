@@ -1,6 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {Model, Types} from "mongoose";
-import {CreateEmpireDto, Empire, EmpireDoc} from "@stellarismeta24.com/types";
+import {CreateEmpire, Empire, EmpireDoc} from "@stellarismeta24.com/types";
 import {InjectModel} from "@nestjs/mongoose";
 
 @Injectable()
@@ -10,7 +10,7 @@ export class EmpireService {
   ) {
   }
 
-  async create(dto: CreateEmpireDto): Promise<EmpireDoc> {
+  async create(dto: CreateEmpire): Promise<EmpireDoc> {
     return this.model.create(dto);
   }
 
