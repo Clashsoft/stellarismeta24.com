@@ -19,9 +19,9 @@
         </h5>
       </div>
       <ul class="list-unstyled">
-        <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center">
+        <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center" [smTooltip]="civic + '_desc' | translate">
           <img src="/assets/civics/{{ civic }}.png" width="29" height="29">
-          {{ civic }}
+          {{ civic | translate }}
         </li>
       </ul>
       <ul class="list-unstyled">
