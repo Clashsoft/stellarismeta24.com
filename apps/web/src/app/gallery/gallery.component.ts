@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {map, Observable, switchMap, tap} from "rxjs";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {EmpireService} from "../services/empire.service";
-import {FilterEmpireDto} from "@stellarismeta24.com/types";
+import {EmpireDto, FilterEmpireDto} from "@stellarismeta24.com/types";
 
 @Component({
   selector: 'sm-gallery',
@@ -17,8 +17,11 @@ export class GalleryComponent implements OnInit {
   ];
   tags: string[] = [];
 
+  empires: EmpireDto[] = [];
+
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private empireService: EmpireService,
   ) {
   }
@@ -32,6 +35,16 @@ export class GalleryComponent implements OnInit {
         text,
       })),
       switchMap(filter => this.empireService.findAll(filter)),
-    ).subscribe();
+    ).subscribe(empires => this.empires = empires);
+  }
+
+  updateTextQuery() {
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: {
+        text: this.filter.text,
+      },
+      queryParamsHandling: 'merge',
+    });
   }
 }
