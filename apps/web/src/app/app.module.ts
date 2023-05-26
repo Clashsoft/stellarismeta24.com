@@ -13,6 +13,7 @@ import { EmpireItemComponent } from './empire-item/empire-item.component';
 import { ImportEmpiresComponent } from './import-empires/import-empires.component';
 import { FormsModule } from '@angular/forms';
 import { GalleryComponent } from './gallery/gallery.component';
+import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -29,8 +30,9 @@ import { GalleryComponent } from './gallery/gallery.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
     FormsModule,
+    NgbDropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

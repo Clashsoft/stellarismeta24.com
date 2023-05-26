@@ -37,7 +37,7 @@ body {
   border-width: 24px;
   border-image-slice: 23 23 23 23 fill;
   border-image-source: url('assets/styles/button.png');
-  background: none;
+  background: none !important;
   margin: -12px;
   height: 48px;
   display: flex;
@@ -45,7 +45,7 @@ body {
   justify-content: center;
 }
 
-.btn:hover, .btn.active {
+.btn:hover, .btn:active, .btn.active {
   border-image-source: url('assets/styles/button_hover.png');
 }
 
