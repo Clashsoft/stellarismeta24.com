@@ -24,4 +24,8 @@ export class EmpireService {
   create(empire: CreateEmpireDto): Observable<EmpireDto> {
     return this.http.post<EmpireDto>(`${environment.apiUrl}/empires`, empire);
   }
+
+  getTags(): Observable<string[]> {
+    return this.http.get<string[]>(`${environment.apiUrl}/empires/tags`);
+  }
 }

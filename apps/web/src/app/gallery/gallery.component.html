@@ -1,0 +1,26 @@
+<div class="plain-bg p-3" style="width: 640px; height: 90vh">
+  <h4>Gallery</h4>
+  <div class="d-flex">
+    <input type="search" class="form-control" placeholder="Search">
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="gameVersionDropdown" ngbDropdownToggle>
+        Game Version
+      </button>
+      <div ngbDropdownMenu aria-labelledby="gameVersionDropdown">
+        <button *ngFor="let gameVersion of gameVersions" ngbDropdownItem [class.selected]="(gameVersion$ | async) === gameVersion">
+          {{ gameVersion }}
+        </button>
+      </div>
+    </div>
+    <div ngbDropdown class="d-inline-block">
+      <button type="button" class="btn btn-outline-primary" id="tagsDropdown" ngbDropdownToggle>
+        Tags
+      </button>
+      <div ngbDropdownMenu aria-labelledby="tagsDropdown">
+        <button *ngFor="let tag of tags" ngbDropdownItem [class.selected]="(tags$ | async)?.includes(tag)">
+          {{ tag }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

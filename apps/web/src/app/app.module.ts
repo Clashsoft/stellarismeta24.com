@@ -11,7 +11,8 @@ import { EmpirePreviewComponent } from './empire-preview/empire-preview.componen
 import { StartComponent } from './start/start.component';
 import { EmpireItemComponent } from './empire-item/empire-item.component';
 import { ImportEmpiresComponent } from './import-empires/import-empires.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from '@angular/forms';
+import { GalleryComponent } from './gallery/gallery.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,12 @@ import {FormsModule} from "@angular/forms";
     StartComponent,
     EmpireItemComponent,
     ImportEmpiresComponent,
+    GalleryComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
+    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     FormsModule,
   ],
   providers: [],
