@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {map, Observable, tap} from "rxjs";
+import {map, Observable, switchMap, tap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {EmpireService} from "../services/empire.service";
+import {FilterEmpireDto} from "@stellarismeta24.com/types";
 
 @Component({
   selector: 'sm-gallery',
@@ -9,8 +10,7 @@ import {EmpireService} from "../services/empire.service";
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  selectedGameVersion?: string;
-  selectedTags: string[] = [];
+  filter: FilterEmpireDto = {};
 
   gameVersions = [
     '3.8',
@@ -26,10 +26,12 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
     this.empireService.getTags().subscribe(tags => this.tags = tags);
     this.route.queryParams.pipe(
-      tap(({gameVersion, tags}) => {
-        this.selectedGameVersion = gameVersion;
-        this.selectedTags = tags?.split(',') || [];
-      }),
+      map(({gameVersion, tags, text}) => this.filter = ({
+        gameVersion,
+        tags: tags?.split(','),
+        text,
+      })),
+      switchMap(filter => this.empireService.findAll(filter)),
     ).subscribe();
   }
 }

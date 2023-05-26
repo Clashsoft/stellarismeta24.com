@@ -5,11 +5,11 @@
     <div ngbDropdown class="d-inline-block">
       <button type="button" class="btn btn-outline-primary" id="gameVersionDropdown" ngbDropdownToggle>
         Game Version
-        <span class="text-muted" *ngIf="selectedGameVersion"> (*)</span>
+        <span class="text-muted" *ngIf="filter.gameVersion"> (*)</span>
       </button>
       <div ngbDropdownMenu aria-labelledby="gameVersionDropdown">
-        <a *ngFor="let gameVersion of gameVersions" ngbDropdownItem [class.selected]="selectedGameVersion === gameVersion"
-          routerLink="." [queryParams]="{gameVersion: selectedGameVersion === gameVersion ? null : gameVersion}" queryParamsHandling="merge">
+        <a *ngFor="let gameVersion of gameVersions" ngbDropdownItem [class.selected]="filter.gameVersion === gameVersion"
+          routerLink="." [queryParams]="{gameVersion: filter.gameVersion === gameVersion ? null : gameVersion}" queryParamsHandling="merge">
           {{ gameVersion }}
         </a>
       </div>
@@ -21,7 +21,7 @@
       </button>
       <div ngbDropdownMenu aria-labelledby="tagsDropdown">
         <a *ngFor="let tag of tags" ngbDropdownItem
-           routerLink="." [queryParams]="{tags: (selectedTags.includes(tag) ? selectedTags.splice(selectedTags.indexOf(tag), 1) : selectedTags.concat(tag)).join(',')}" queryParamsHandling="merge"
+           routerLink="." [queryParams]="{tags: filter.tags ? (filter.tags.includes(tag) ? filter.tags.splice(filter.tags.indexOf(tag), 1) : filter.tags.concat(tag)).join(',') : tag}" queryParamsHandling="merge"
         >
           {{ tag }}
         </a>

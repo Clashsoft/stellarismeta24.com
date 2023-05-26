@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
-import {CreateEmpireDto, EmpireDto} from "@stellarismeta24.com/types";
+import {CreateEmpireDto, EmpireDto, FilterEmpireDto} from "@stellarismeta24.com/types";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
@@ -13,8 +13,18 @@ export class EmpireService {
   ) {
   }
 
-  findAll(): Observable<EmpireDto[]> {
-    return this.http.get<EmpireDto[]>(`${environment.apiUrl}/empires`);
+  findAll(filter?: FilterEmpireDto): Observable<EmpireDto[]> {
+    if (filter) {
+      for (const [key, value] of Object.entries(filter)) {
+        if (!value) {
+          // @ts-ignore
+          delete filter[key];
+        }
+      }
+    }
+    return this.http.get<EmpireDto[]>(`${environment.apiUrl}/empires`, {
+      params: filter,
+    });
   }
 
   findOne(id: string): Observable<EmpireDto> {
