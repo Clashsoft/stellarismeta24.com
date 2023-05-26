@@ -14,7 +14,9 @@
           {{ empire.design.government | translate }}
         </h5>
         <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
-        <h5>{{ empire.design.authority }}</h5>
+        <h5 [smTooltip]="empire.design.authority + '_desc' | translate">
+          {{ empire.design.authority | translate }}
+        </h5>
       </div>
       <ul class="list-unstyled">
         <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center">
