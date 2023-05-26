@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {map, Observable} from "rxjs";
+import {map, Observable, tap} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 import {EmpireService} from "../services/empire.service";
 
@@ -9,8 +9,9 @@ import {EmpireService} from "../services/empire.service";
   styleUrls: ['./gallery.component.scss'],
 })
 export class GalleryComponent implements OnInit {
-  gameVersion$: Observable<string | undefined>;
-  tags$: Observable<string[]>;
+  selectedGameVersion?: string;
+  selectedTags: string[] = [];
+
   gameVersions = [
     '3.8',
   ];
@@ -20,11 +21,15 @@ export class GalleryComponent implements OnInit {
     private route: ActivatedRoute,
     private empireService: EmpireService,
   ) {
-    this.gameVersion$ = route.params.pipe(map(({gameVersion}) => gameVersion));
-    this.tags$ = route.params.pipe(map(({tags}) => tags.split(',')));
   }
 
   ngOnInit() {
     this.empireService.getTags().subscribe(tags => this.tags = tags);
+    this.route.queryParams.pipe(
+      tap(({gameVersion, tags}) => {
+        this.selectedGameVersion = gameVersion;
+        this.selectedTags = tags?.split(',') || [];
+      }),
+    ).subscribe();
   }
 }
