@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Model, Types} from "mongoose";
+import {FilterQuery, Model, Types} from "mongoose";
 import {CreateEmpire, Empire, EmpireDoc} from "@stellarismeta24.com/types";
 import {InjectModel} from "@nestjs/mongoose";
 
@@ -14,8 +14,14 @@ export class EmpireService {
     return this.model.create(dto);
   }
 
-  async findAll(): Promise<EmpireDoc[]> {
-    return this.model.find().exec();
+  async findAll(filter: FilterQuery<Empire> = {}): Promise<EmpireDoc[]> {
+    if (!filter.$text) {
+      return this.model.find(filter).exec();
+    }
+    return this.model
+      .find(filter, {score: {$meta: "textScore"}})
+      .sort({score: {$meta: "textScore"}})
+      .exec();
   }
 
   async findRandom(): Promise<EmpireDoc> {

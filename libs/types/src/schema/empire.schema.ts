@@ -93,7 +93,11 @@ export class Empire {
   @ApiPropertyOptional()
   description?: string;
 
-  @Prop()
+  @Prop({index: 1})
+  @ApiProperty()
+  gameVersion?: string;
+
+  @Prop({index: 1})
   @ApiProperty()
   tags!: string[];
 
@@ -102,5 +106,9 @@ export class Empire {
   design!: EmpireDesign;
 }
 
-export const EmpireSchema = SchemaFactory.createForClass(Empire);
+export const EmpireSchema = SchemaFactory.createForClass(Empire).index({
+  name: 'text',
+  description: 'text',
+  'design.key': 'text',
+});
 export type EmpireDoc = Doc<Empire>;

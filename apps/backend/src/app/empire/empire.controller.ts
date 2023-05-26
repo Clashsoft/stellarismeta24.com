@@ -1,8 +1,8 @@
-import {Body, Controller, Delete, Get, Param, Post,} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Param, Post, Query,} from '@nestjs/common';
 import {EmpireService} from './empire.service';
-import {CreateEmpire, Empire} from "@stellarismeta24.com/types";
+import {CreateEmpire, Empire, EmpireFilter} from "@stellarismeta24.com/types";
 import {NotFound, ObjectIdPipe} from "@mean-stream/nestx";
-import {Types} from "mongoose";
+import {FilterQuery, Types} from "mongoose";
 import {ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
 
 @Controller('empires')
@@ -21,8 +21,10 @@ export class EmpireController {
 
   @Get()
   @ApiOkResponse({type: [Empire]})
-  async findAll(): Promise<Empire[]> {
-    return this.empireService.findAll();
+  async findAll(
+    @Query() filter?: EmpireFilter,
+  ): Promise<Empire[]> {
+    return this.empireService.findAll(filter && this.convertFilter(filter));
   }
 
   @Get('random')
@@ -47,5 +49,18 @@ export class EmpireController {
     @Param('id', ObjectIdPipe) id: Types.ObjectId,
   ): Promise<Empire | null> {
     return this.empireService.remove(id);
+  }
+
+  private convertFilter(filter: EmpireFilter): FilterQuery<Empire> {
+    const {text, tags, ...rest} = filter;
+    const result: FilterQuery<Empire> = rest;
+    if (text) {
+      result.$text = {$search: text};
+    }
+    if (tags) {
+      result.tags = {$all: tags};
+    }
+    console.log(result);
+    return result;
   }
 }
