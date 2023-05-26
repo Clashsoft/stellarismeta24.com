@@ -1,11 +1,12 @@
 import {Directive, HostListener, Inject, Input, OnDestroy} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
+import {SafeHtml} from "@angular/platform-browser";
 
 @Directive({
   selector: '[smTooltip]',
 })
 export class TooltipDirective implements OnDestroy {
-  @Input() smTooltip!: string;
+  @Input() smTooltip!: string | SafeHtml;
 
   private container?: HTMLDivElement;
 
@@ -21,7 +22,7 @@ export class TooltipDirective implements OnDestroy {
     }
 
     this.container = this.document.createElement('div');
-    this.container.innerText = this.smTooltip;
+    this.container.innerHTML = this.smTooltip.toString();
     this.container.className = 'tooltip-container';
     this.updatePosition(event);
     this.document.body.appendChild(this.container);
