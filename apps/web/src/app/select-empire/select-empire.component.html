@@ -1,19 +1,21 @@
 <div class="row h-100">
-  <div class="col-auto plain-bg p-3">
+  <div class="col-auto plain-bg p-3 h-100 d-flex flex-column">
     <h4 class="p-3">Select Empire</h4>
-    <a routerLink="random" class="select-button random mb-1" smTooltip="View a random user-submitted Empire">
-      Random
-    </a>
-    <a routerLink="new/edit" class="select-button new mb-1" smTooltip="Create a new Empire">
-      Create New
-    </a>
-    <a routerLink="import" class="select-button quick-start mb-1" smTooltip="Import Empires from Save Files">
-      Quick Start
-    </a>
-    <a routerLink="gallery" class="select-button observe mb-1" smTooltip="Show Gallery">
-      Observe
-    </a>
-    <sm-empire-item *ngFor="let empire of empires" [empire]="empire" class="mb-1"></sm-empire-item>
+    <div class="overflow-auto pe-3">
+      <a routerLink="random" class="select-button random mb-1" smTooltip="View a random user-submitted Empire">
+        Random
+      </a>
+      <a routerLink="new/edit" class="select-button new mb-1" smTooltip="Create a new Empire">
+        Create New
+      </a>
+      <a routerLink="import" class="select-button quick-start mb-1" smTooltip="Import Empires from Save Files">
+        Quick Start
+      </a>
+      <a routerLink="gallery" class="select-button observe mb-1" smTooltip="Show Gallery">
+        Observe
+      </a>
+      <sm-empire-item *ngFor="let empire of empires" [empire]="empire" class="mb-1"></sm-empire-item>
+    </div>
   </div>
   <div class="col d-flex align-items-center justify-content-center">
     <router-outlet></router-outlet>
