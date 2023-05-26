@@ -13,7 +13,8 @@ import { EmpireItemComponent } from './empire-item/empire-item.component';
 import { ImportEmpiresComponent } from './import-empires/import-empires.component';
 import { FormsModule } from '@angular/forms';
 import { GalleryComponent } from './gallery/gallery.component';
-import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslatePipe } from './localisation/translate.pipe';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,12 @@ import {NgbDropdownModule} from "@ng-bootstrap/ng-bootstrap";
     EmpireItemComponent,
     ImportEmpiresComponent,
     GalleryComponent,
+    TranslatePipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {initialNavigation: 'enabledBlocking'}),
+    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     FormsModule,
     NgbDropdownModule,
   ],
