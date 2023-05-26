@@ -111,10 +111,10 @@ body {
 
 .select-button.selected {
   // border: 24px solid;
-  border-image-source: url('assets/styles/select_button_hover.png');
-  border-image-slice: 24 fill;
-  border-image-outset: 12px;
-  border-image-width: 24px;
+  border-image-source: url('assets/styles/glow_tile_orange.png');
+  border-image-slice: 12 fill;
+  border-image-outset: 5px;
+  border-image-width: 12px;
 }
 
 .select-button h6 {
