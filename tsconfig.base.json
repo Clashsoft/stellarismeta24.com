@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@stellarismeta24.com/savefiles": ["libs/savefiles/src/index.ts"],
       "@stellarismeta24.com/types": ["libs/types/src/index.ts"]
     }
   },

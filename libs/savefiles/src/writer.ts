@@ -1,5 +1,5 @@
 import {Jomini, Writer} from "jomini";
-import fs from "fs";
+import {CustomEmpireDesigns, EmpireDesign} from "@stellarismeta24.com/types";
 
 const FLAT_ARRAY_KEYS = [
   'ethic',
@@ -9,48 +9,32 @@ const UNQUOTED_KEYS = [
   'gender',
 ];
 
-const input = fs.readFileSync('./user_empire_designs_v3.4.txt', 'utf8');
-const parser = await Jomini.initialize();
-const out = parser.parseText(input, {
-  typeNarrowing: 'unquoted',
-});
-fs.writeFileSync('./user_empire_designs_v3.4.json', JSON.stringify(out, null, 2));
+export async function writeCustomEmpireDesign(design: EmpireDesign): Promise<Uint8Array> {
+  return writeCustomEmpireDesigns({[design.key]: design});
+}
 
-const result = parser.write((writer) => {
-  writeEntries(writer, out);
-});
-fs.writeFileSync('./user_empire_designs_v3.4.back.txt', result);
+export async function writeCustomEmpireDesigns(designs: CustomEmpireDesigns): Promise<Uint8Array> {
+  const jomini = await Jomini.initialize();
+  return jomini.write((writer) => writeEntries(writer, designs));
+}
 
-/**
- * @param writer {Writer}
- * @param key {string}
- * @param value {any}
- */
-function writeKeyValue(writer, key, value) {
+function writeKeyValue(writer: Writer, key: string, value: unknown) {
   if (/^[a-zA-Z_]+$/.test(key)) {
     writer.write_unquoted(key);
   } else {
     writer.write_quoted(key);
   }
   writer.write_operator('=');
-  writeAny(writer, value, key);
+  writeunknown(writer, value, key);
 }
 
-/**
- * @param writer {Writer}
- * @param obj {object}
- */
-function writeObject(writer, obj) {
+function writeObject(writer: Writer, obj: object) {
   writer.write_object_start();
   writeEntries(writer, obj);
   writer.write_end();
 }
 
-/**
- * @param writer {Writer}
- * @param obj {object}
- */
-function writeEntries(writer, obj) {
+function writeEntries(writer: Writer, obj: object) {
   for (const [key, value] of Object.entries(obj)) {
     if (FLAT_ARRAY_KEYS.includes(key) && Array.isArray(value)) {
       for (const item of value) {
@@ -62,29 +46,20 @@ function writeEntries(writer, obj) {
   }
 }
 
-/**
- * @param writer {Writer}
- * @param obj {Array}
- */
-function writeArray(writer, obj) {
+function writeArray(writer: Writer, obj: unknown[]) {
   writer.write_array_start();
   for (const item of obj) {
-    writeAny(writer, item);
+    writeunknown(writer, item);
   }
   writer.write_end();
 }
 
-/**
- * @param writer {Writer}
- * @param obj {any}
- * @param key {string}
- */
-function writeAny(writer, obj, key = undefined) {
+function writeunknown(writer: Writer, obj: unknown, key?: string) {
   if (Array.isArray(obj)) {
     writeArray(writer, obj);
   } else switch (typeof obj) {
     case 'string':
-      if (UNQUOTED_KEYS.includes(key)) {
+      if (key && UNQUOTED_KEYS.includes(key)) {
         writer.write_unquoted(obj);
       } else {
         writer.write_quoted(obj);
