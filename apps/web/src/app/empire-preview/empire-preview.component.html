@@ -42,12 +42,12 @@
       </ul>
     </div>
     <div class="col-4">
-      <div class="d-flex align-items-center">
+      <div class="d-flex align-items-center" [smTooltip]="empire.design.origin + '_desc' | translate">
         <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
-        <h5>{{ empire.design.origin }}</h5>
+        <h5>{{ empire.design.origin | translate }}</h5>
       </div>
       <p style="color: aquamarine">
-        {{ empire.design.species.species_bio }}
+        {{ empire.design.species.species_bio || (empire.design.origin + '_desc' | translate) }}
       </p>
     </div>
   </div>
