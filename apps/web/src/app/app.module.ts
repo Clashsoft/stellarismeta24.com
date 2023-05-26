@@ -9,6 +9,7 @@ import { SelectEmpireComponent } from './select-empire/select-empire.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmpirePreviewComponent } from './empire-preview/empire-preview.component';
 import { StartComponent } from './start/start.component';
+import { EmpireItemComponent } from './empire-item/empire-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StartComponent } from './start/start.component';
     SelectEmpireComponent,
     EmpirePreviewComponent,
     StartComponent,
+    EmpireItemComponent,
   ],
   imports: [
     BrowserModule,

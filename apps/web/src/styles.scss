@@ -100,3 +100,23 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.select-button {
+  display: flex;
+  width: 280px;
+  height: 85px;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  text-decoration: none;
+}
+
+.select-button h6 {
+  margin-bottom: 0;
+}
+
+.user-created {
+  border: 4px solid;
+  border-image-slice: 4 fill;
+  border-image-source: url('/assets/styles/user_created.png');
+}
