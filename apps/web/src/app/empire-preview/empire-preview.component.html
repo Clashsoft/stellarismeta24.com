@@ -5,7 +5,9 @@
   <div class="text-center">
     <h5 style="color: orange">{{ empire.design.planet_name.key }}</h5>
     <img src="/assets/planets/{{ empire.design.planet_class }}.png" width="120" height="120">
-    <h5>{{ empire.design.planet_class }}</h5>
+    <h5 [smTooltip]="empire.design.planet_class + '_desc' | translate">
+      {{ empire.design.planet_class | translate }}
+    </h5>
   </div>
   <div class="row">
     <div class="col-4">
