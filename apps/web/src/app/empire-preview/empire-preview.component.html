@@ -9,8 +9,8 @@
       {{ empire.design.planet_class | translate }}
     </h5>
   </div>
-  <div class="row">
-    <div class="col-4">
+  <div class="row gap-2">
+    <div class="col-auto dark-area-cut">
       <div class="text-center">
         <h5 [smTooltip]="empire.design.government + '_desc' | translate">
           {{ empire.design.government | translate }}
@@ -33,7 +33,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-4">
+    <div class="col-auto dark-area-cut">
       <h5>{{ empire.design.species.species_name.key }}</h5>
       <h6 style="color: aquamarine" [smTooltip]="empire.design.species.class + '_desc' | translate">
         {{ empire.design.species.class | translate }}
@@ -45,7 +45,7 @@
         </li>
       </ul>
     </div>
-    <div class="col-4">
+    <div class="col dark-area-cut">
       <div class="d-flex align-items-center" [smTooltip]="empire.design.origin + '_desc' | translate">
         <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
         <h5>{{ empire.design.origin | translate }}</h5>
