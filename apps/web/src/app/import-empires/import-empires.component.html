@@ -8,7 +8,7 @@
     </p>
     <div class="mb-3">
       <label for="gameVersion" class="form-label">Game Version</label>
-      <select class="form-select" id="gameVersion" [(ngModel)]="gameVersion">
+      <select class="form-control btn" id="gameVersion" [(ngModel)]="gameVersion">
         <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
       </select>
       <div class="form-text">
@@ -17,7 +17,7 @@
     </div>
     <div class="mb-3">
       <label for="file" class="form-label">Upload file</label>
-      <input #file class="form-control" type="file" id="file" accept="text/plain" (change)="readFile(file.files?.item(0))">
+      <input #file class="form-control btn" type="file" id="file" accept="text/plain" (change)="readFile(file.files?.item(0))">
     </div>
     <div class="mb-3">
       <label for="area" class="form-label">Paste file contents</label>
