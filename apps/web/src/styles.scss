@@ -89,19 +89,8 @@ body {
 }
 
 .plain-bg {
-  position: relative;
   color: white;
-}
-
-.plain-bg::before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 60px solid;
+  border-image-width: 60px;
   border-image-slice: 60 fill;
   border-image-source: url('assets/styles/plain_bg_tile.png');
 }
