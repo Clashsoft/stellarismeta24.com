@@ -22,13 +22,13 @@
       </div>
       <ul class="list-unstyled">
         <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center" [smTooltip]="civic + '_desc' | translate">
-          <img src="/assets/civics/{{ civic }}.png" width="29" height="29">
+          <img src="/assets/civics/{{ civic }}.png" width="29" height="29" class="me-2">
           {{ civic | translate }}
         </li>
       </ul>
       <ul class="list-unstyled">
         <li *ngFor="let ethic of [empire.design.ethic].flat()" class="d-flex align-items-center" [smTooltip]="ethic + '_desc' | translate">
-          <img src="/assets/ethics/{{ ethic }}.png" width="29" height="29">
+          <img src="/assets/ethics/{{ ethic }}.png" width="29" height="29" class="me-2">
           {{ ethic | translate }}
         </li>
       </ul>
@@ -40,14 +40,14 @@
       </h6>
       <ul class="list-unstyled">
         <li *ngFor="let trait of [empire.design.species.trait].flat()" class="d-flex align-items-center" [smTooltip]="trait + '_desc' | translate">
-          <img src="/assets/traits/{{ trait }}.png" width="29" height="29">
+          <img src="/assets/traits/{{ trait }}.png" width="29" height="29" class="me-2">
           {{ trait | translate }}
         </li>
       </ul>
     </div>
     <div class="col dark-area-cut">
       <div class="d-flex align-items-center" [smTooltip]="empire.design.origin + '_desc' | translate">
-        <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40">
+        <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40" class="me-2">
         <h5>{{ empire.design.origin | translate }}</h5>
       </div>
       <p style="color: aquamarine">
