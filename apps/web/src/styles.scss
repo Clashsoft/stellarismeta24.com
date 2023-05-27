@@ -44,6 +44,10 @@ body {
   caret-color: gold;
 }
 
+.form-control::file-selector-button {
+  display: none;
+}
+
 .btn {
   color: white;
   border-image-outset: 12px;
