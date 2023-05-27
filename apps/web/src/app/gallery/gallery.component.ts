@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {map, Observable, switchMap, tap} from "rxjs";
+import {map, switchMap} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
 import {EmpireService} from "../services/empire.service";
 import {EmpireDto, FilterEmpireDto} from "@stellarismeta24.com/types";
+import {GAME_VERSIONS} from "../constants";
 
 @Component({
   selector: 'sm-gallery',
@@ -12,9 +13,7 @@ import {EmpireDto, FilterEmpireDto} from "@stellarismeta24.com/types";
 export class GalleryComponent implements OnInit {
   filter: FilterEmpireDto = {};
 
-  gameVersions = [
-    '3.8',
-  ];
+  gameVersions = GAME_VERSIONS;
   tags: string[] = [];
 
   empires: EmpireDto[] = [];

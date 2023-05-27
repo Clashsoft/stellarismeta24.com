@@ -3,6 +3,7 @@ import {EmpireDto} from "@stellarismeta24.com/types";
 import {readCustomEmpireDesigns} from "@stellarismeta24.com/savefiles";
 import {EmpireService} from "../services/empire.service";
 import {SelectEmpireComponent} from "../select-empire/select-empire.component";
+import {GAME_VERSIONS} from "../constants";
 
 @Component({
   selector: 'sm-import-empires',
@@ -13,6 +14,9 @@ export class ImportEmpiresComponent {
   content = '';
 
   empires: EmpireDto[] = [];
+  gameVersion?: string;
+
+  gameVersions = GAME_VERSIONS;
 
   constructor(
     private readonly empireService: EmpireService,
@@ -35,6 +39,7 @@ export class ImportEmpiresComponent {
     this.empires = Object.values(designs).map(design => ({
       _id: undefined!,
       tags: ['imported'],
+      gameVersion: this.gameVersion,
       design,
     }));
   }

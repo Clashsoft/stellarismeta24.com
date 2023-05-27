@@ -11,7 +11,16 @@
   </div>
   <div class="mb-3">
     <label for="area" class="form-label">Paste file contents</label>
-    <textarea class="form-control" id="area" rows="6" [(ngModel)]="content" (change)="readContent()"></textarea>
+    <textarea class="form-control" id="area" rows="3" [(ngModel)]="content" (change)="readContent()"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="gameVersion" class="form-label">Game Version</label>
+    <select class="form-select" id="gameVersion" [(ngModel)]="gameVersion">
+      <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
+    </select>
+    <div class="form-text">
+      Select a game version to let others know if your empire is compatible.
+    </div>
   </div>
   <h5>Found Empires</h5>
   <div class="overflow-auto">
