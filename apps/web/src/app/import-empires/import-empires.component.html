@@ -1,32 +1,36 @@
-<div class="plain-bg p-3 d-flex flex-column" style="width: 640px; height: 90vh;">
-  <h4>Import Empires</h4>
-  <p>
-    Import your <code>user_empire_designs.txt</code> file here, or paste partial contents in the text field.
-    Read where to find the file in the
-    <a href="https://stellaris.paradoxwikis.com/Custom_empire_designs_editing" target="_blank">Stellaris Wiki</a>.
-  </p>
-  <div class="mb-3">
-    <label for="file" class="form-label">Upload file</label>
-    <input #file class="form-control" type="file" id="file" accept="text/plain" (change)="readFile(file.files?.item(0))">
-  </div>
-  <div class="mb-3">
-    <label for="area" class="form-label">Paste file contents</label>
-    <textarea class="form-control" id="area" rows="3" [(ngModel)]="content" (change)="readContent()"></textarea>
-  </div>
-  <div class="mb-3">
-    <label for="gameVersion" class="form-label">Game Version</label>
-    <select class="form-select" id="gameVersion" [(ngModel)]="gameVersion">
-      <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
-    </select>
-    <div class="form-text">
-      Select a game version to let others know if your empire is compatible.
+<div class="plain-bg p-3 row" style="width: 800px; height: 90vh;">
+  <div class="col-7">
+    <h4>Import Empires</h4>
+    <p>
+      Import your <code>user_empire_designs.txt</code> file here, or paste partial contents in the text field.
+      Read where to find the file in the
+      <a href="https://stellaris.paradoxwikis.com/Custom_empire_designs_editing" target="_blank">Stellaris Wiki</a>.
+    </p>
+    <div class="mb-3">
+      <label for="gameVersion" class="form-label">Game Version</label>
+      <select class="form-select" id="gameVersion" [(ngModel)]="gameVersion">
+        <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
+      </select>
+      <div class="form-text">
+        Select a game version to let others know if your empire is compatible.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="file" class="form-label">Upload file</label>
+      <input #file class="form-control" type="file" id="file" accept="text/plain" (change)="readFile(file.files?.item(0))">
+    </div>
+    <div class="mb-3">
+      <label for="area" class="form-label">Paste file contents</label>
+      <textarea class="form-control" id="area" rows="12" [(ngModel)]="content" (change)="readContent()"></textarea>
     </div>
   </div>
-  <h5>Found Empires</h5>
-  <div class="overflow-auto">
-    <sm-empire-item *ngFor="let empire of empires" [empire]="empire" (click)="import(empire)"></sm-empire-item>
-  </div>
-  <div class="form-text">
-    Click to import a result.
+  <div class="col-5 h-100 d-flex flex-column">
+    <h4>Results</h4>
+    <div class="overflow-auto flex-grow-1">
+      <sm-empire-item *ngFor="let empire of empires" [empire]="empire" (click)="import(empire)"></sm-empire-item>
+    </div>
+    <div class="form-text">
+      Click to import a result.
+    </div>
   </div>
 </div>
