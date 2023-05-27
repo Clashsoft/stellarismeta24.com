@@ -14,6 +14,10 @@
 $font-family-sans-serif: CenturyGothic, sans-serif;
 @import "bootstrap/scss/bootstrap";
 
+* {
+  cursor: url('assets/cursors/normal.cur'), auto !important;
+}
+
 html, body {
   height: 100%;
   width: 100%;
