@@ -9,6 +9,7 @@
     <div class="mb-3">
       <label for="gameVersion" class="form-label">Game Version</label>
       <select class="form-control btn" id="gameVersion" [(ngModel)]="gameVersion">
+        <option [value]="undefined">Please select...</option>
         <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
       </select>
       <div class="form-text">
