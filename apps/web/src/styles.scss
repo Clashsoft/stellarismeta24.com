@@ -36,6 +36,14 @@ body {
   font-family: Orbitron, sans-serif;
 }
 
+.dark-area-cut {
+  border-image-source: url('assets/styles/dark_area_cut_8.png');
+  border-image-slice: 10 fill;
+  border-image-width: 10px;
+  background: none !important;
+  caret-color: gold;
+}
+
 .btn {
   color: white;
   border-image-outset: 12px;
@@ -49,7 +57,7 @@ body {
   justify-content: center;
 }
 
-.btn:hover, .btn:active, .btn.active {
+.btn:hover, .btn:active, .btn:focus, .btn.active {
   border-image-source: url('assets/styles/button_hover.png');
 }
 
