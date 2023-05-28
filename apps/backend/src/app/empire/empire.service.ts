@@ -37,7 +37,29 @@ export class EmpireService {
   }
 
   async addRating(id: Types.ObjectId, dto: EmpireRating): Promise<Empire | null> {
-    return this.model.findByIdAndUpdate(id, [
+    if (dto.oldRating) {
+
+    }
+
+    return this.model.findByIdAndUpdate(id, dto.oldRating ? [
+      // rating = (old.rating * old.ratings - dto.oldRating + dto.rating) / old.ratings
+      // => rating = old.rating + (dto.rating - dto.oldRating) / old.ratings
+      {
+        $set: {
+          rating: {
+            $add: [
+              '$rating',
+              {
+                $divide: [
+                  dto.rating - dto.oldRating,
+                  '$ratings',
+                ],
+              },
+            ],
+          },
+        },
+      },
+    ] : [
       // rating = (old.rating * old.ratings + dto.rating) / (old.ratings + 1)
       {
         $set: {

@@ -16,9 +16,13 @@ export class EmpireItemComponent {
   }
 
   rate(rating: number) {
+    const storageKey = `empires/${this.empire._id}/rating`;
+    const oldRating = +(globalThis?.localStorage.getItem(storageKey) || 0) || undefined;
     this.empireService.rate(this.empire._id, {
       rating,
+      oldRating,
     }).subscribe(empire => {
+      globalThis?.localStorage.setItem(storageKey, String(rating));
       this.empire.rating = empire.rating;
       this.empire.ratings = empire.ratings;
     });
