@@ -3,5 +3,8 @@
     <h6 style="color: orange">{{ empire.design.name.key }}</h6>
     <h6>{{ empire.design.government | translate }}</h6>
     <h6 style="color: aquamarine">{{ empire.design.species.class | translate }}</h6>
+    <span *ngFor="let tag of empire.tags || []" class="badge bg-secondary">
+      {{ tag }}
+    </span>
   </div>
 </a>
