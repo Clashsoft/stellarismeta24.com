@@ -18,3 +18,6 @@ export class EmpireFilter extends PartialType(PickType(Empire, [
   @IsString()
   text?: string;
 }
+
+export class EmpireRating extends PickType(Empire, ['rating'] as const) {
+}

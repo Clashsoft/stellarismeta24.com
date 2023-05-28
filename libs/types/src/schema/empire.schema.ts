@@ -2,6 +2,7 @@ import {ApiProperty, ApiPropertyOptional} from "@nestjs/swagger";
 import {Types} from "mongoose";
 import {Prop, Schema, SchemaFactory} from "@nestjs/mongoose";
 import {Doc} from "@mean-stream/nestx";
+import {IsInt, Max, Min} from "class-validator";
 
 export interface Translatable {
   key: string;
@@ -100,6 +101,17 @@ export class Empire {
   @Prop({index: 1})
   @ApiProperty()
   tags!: string[];
+
+  @Prop({index: 1, default: 0})
+  @ApiProperty({minimum: 0, maximum: 5})
+  @Min(0)
+  @Max(5)
+  rating?: number;
+
+  @Prop({default: 0})
+  @ApiProperty({minimum: 0})
+  @IsInt()
+  ratings?: number;
 
   @Prop({type: Object})
   @ApiProperty()
