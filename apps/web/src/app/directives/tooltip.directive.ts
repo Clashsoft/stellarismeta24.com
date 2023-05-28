@@ -6,6 +6,7 @@ import {DOCUMENT} from "@angular/common";
 })
 export class TooltipDirective implements OnDestroy {
   @Input() smTooltip!: string;
+  @Input() delayed?: string;
 
   private container?: HTMLDivElement;
 
@@ -26,6 +27,14 @@ export class TooltipDirective implements OnDestroy {
     this.renderer.addClass(this.container, 'tooltip-container');
     this.updatePosition(event);
     this.renderer.appendChild(document.body, this.container);
+
+    if (this.delayed) {
+      setTimeout(() => {
+        this.container && this.renderer.setProperty(this.container, 'innerHTML', `${this.smTooltip}
+<div class="text-muted">${'-'.repeat(15)}</div>
+${this.delayed}`);
+      }, 2000);
+    }
   }
 
   @HostListener('mousemove', ['$event'])
