@@ -3,6 +3,9 @@
     <h6 style="color: orange">{{ empire.design.name.key }}</h6>
     <h6>{{ empire.design.government | translate }}</h6>
     <h6 style="color: aquamarine">{{ empire.design.species.class | translate }}</h6>
+    <ngb-rating style="color: gold" [max]="5" [rate]="empire.rating || 0"
+                [smTooltip]="empire.ratings + ' Ratings, averaging ' + (empire.rating | number:'0.1')"
+                (rateChange)="rate($event)"></ngb-rating>
     <span *ngFor="let tag of empire.tags || []" class="badge bg-secondary">
       {{ tag }}
     </span>

@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
-import {CreateEmpireDto, EmpireDto, FilterEmpireDto} from "@stellarismeta24.com/types";
+import {CreateEmpireDto, EmpireDto, EmpireRatingDto, FilterEmpireDto} from "@stellarismeta24.com/types";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
@@ -33,6 +33,10 @@ export class EmpireService {
 
   create(empire: CreateEmpireDto): Observable<EmpireDto> {
     return this.http.post<EmpireDto>(`${environment.apiUrl}/empires`, empire);
+  }
+
+  rate(id: string, dto: EmpireRatingDto): Observable<EmpireDto> {
+    return this.http.post<EmpireDto>(`${environment.apiUrl}/empires/${id}/ratings`, dto);
   }
 
   getTags(): Observable<string[]> {
