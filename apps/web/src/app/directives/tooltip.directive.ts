@@ -64,7 +64,7 @@ ${this.delayed}`);
   }
 
   private updatePosition(event: MouseEvent) {
-    this.renderer.setStyle(this.container!, 'left', `${event.clientX + 12}px`);
-    this.renderer.setStyle(this.container!, 'top', `${event.clientY + 12}px`);
+    this.renderer.setStyle(this.container!, 'left', `${event.clientX + 16}px`);
+    this.renderer.setStyle(this.container!, 'top', `${event.clientY + 16}px`);
   }
 }
