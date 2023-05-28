@@ -1,6 +1,6 @@
 import {Injectable} from '@nestjs/common';
 import {FilterQuery, Model, Types} from "mongoose";
-import {CreateEmpire, Empire, EmpireDoc} from "@stellarismeta24.com/types";
+import {CreateEmpire, Empire, EmpireDoc, EmpireRating} from "@stellarismeta24.com/types";
 import {InjectModel} from "@nestjs/mongoose";
 
 @Injectable()
@@ -34,6 +34,34 @@ export class EmpireService {
 
   async findTags(): Promise<string[]> {
     return this.model.distinct('tags').exec();
+  }
+
+  async addRating(id: Types.ObjectId, dto: EmpireRating): Promise<Empire | null> {
+    return this.model.findByIdAndUpdate(id, [
+      // rating = (old.rating * old.ratings + dto.rating) / (old.ratings + 1)
+      {
+        $set: {
+          rating: {
+            $divide: [
+              {
+                $add: [
+                  {$multiply: ['$rating', '$ratings']},
+                  dto.rating,
+                ]
+              },
+              {$add: ['$ratings', 1]},
+            ],
+          },
+        },
+      },
+      {
+        $set: {
+          ratings: {
+            $add: ['$ratings', 1],
+          },
+        },
+      },
+    ], {new: true});
   }
 
   async remove(id: Types.ObjectId): Promise<EmpireDoc | null> {

@@ -1,6 +1,6 @@
 import {Body, Controller, Delete, Get, Param, Post, Query,} from '@nestjs/common';
 import {EmpireService} from './empire.service';
-import {CreateEmpire, Empire, EmpireFilter} from "@stellarismeta24.com/types";
+import {CreateEmpire, Empire, EmpireFilter, EmpireRating} from "@stellarismeta24.com/types";
 import {NotFound, ObjectIdPipe} from "@mean-stream/nestx";
 import {FilterQuery, Types} from "mongoose";
 import {ApiCreatedResponse, ApiOkResponse, ApiTags} from "@nestjs/swagger";
@@ -46,6 +46,16 @@ export class EmpireController {
     @Param('id', ObjectIdPipe) id: Types.ObjectId,
   ): Promise<Empire | null> {
     return this.empireService.findOne(id);
+  }
+
+  @Post(':id/ratings')
+  @ApiOkResponse({type: Empire})
+  @NotFound()
+  async addRating(
+    @Param('id', ObjectIdPipe) id: Types.ObjectId,
+    @Body() dto: EmpireRating,
+  ): Promise<Empire | null> {
+    return this.empireService.addRating(id, dto);
   }
 
   @Delete(':id')
