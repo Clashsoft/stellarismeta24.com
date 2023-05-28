@@ -16,11 +16,11 @@ export class EmpireService {
 
   async findAll(filter: FilterQuery<Empire> = {}): Promise<EmpireDoc[]> {
     if (!filter.$text) {
-      return this.model.find(filter).exec();
+      return this.model.find(filter).sort({rating: -1}).exec();
     }
     return this.model
       .find(filter, {score: {$meta: "textScore"}})
-      .sort({score: {$meta: "textScore"}})
+      .sort({score: {$meta: "textScore"}, rating: -1})
       .exec();
   }
 
@@ -37,10 +37,6 @@ export class EmpireService {
   }
 
   async addRating(id: Types.ObjectId, dto: EmpireRating): Promise<Empire | null> {
-    if (dto.oldRating) {
-
-    }
-
     return this.model.findByIdAndUpdate(id, dto.oldRating ? [
       // rating = (old.rating * old.ratings - dto.oldRating + dto.rating) / old.ratings
       // => rating = old.rating + (dto.rating - dto.oldRating) / old.ratings
