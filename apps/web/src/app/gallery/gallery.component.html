@@ -5,30 +5,43 @@
     <div ngbDropdown class="d-inline-block">
       <button type="button" class="btn btn-outline-primary" id="gameVersionDropdown" ngbDropdownToggle>
         Game Version
-        <span class="text-muted" *ngIf="filter.gameVersion"> (*)</span>
+        @if (filter.gameVersion) {
+          <span class="text-muted"> (*)</span>
+        }
       </button>
       <div ngbDropdownMenu aria-labelledby="gameVersionDropdown">
-        <a *ngFor="let gameVersion of gameVersions" ngbDropdownItem [class.selected]="filter.gameVersion === gameVersion"
-          routerLink="." [queryParams]="{gameVersion: filter.gameVersion === gameVersion ? null : gameVersion}" queryParamsHandling="merge">
-          {{ gameVersion }}
-        </a>
+        @for (gameVersion of gameVersions; track gameVersion) {
+          <a ngbDropdownItem [class.selected]="filter.gameVersion === gameVersion"
+             routerLink="." [queryParams]="{gameVersion: filter.gameVersion === gameVersion ? null : gameVersion}"
+             queryParamsHandling="merge">
+            {{ gameVersion }}
+          </a>
+        }
       </div>
     </div>
     <div ngbDropdown class="d-inline-block">
       <button type="button" class="btn btn-outline-primary" id="tagsDropdown" ngbDropdownToggle>
         Tags
-        <span class="text-muted" *ngIf="filter.tags?.length"> ({{ filter.tags?.length }})</span>
+        @if (filter.tags?.length) {
+          <span class="text-muted"> ({{ filter.tags?.length }})</span>
+        }
       </button>
       <div ngbDropdownMenu aria-labelledby="tagsDropdown">
-        <a *ngFor="let tag of tags" ngbDropdownItem
-           routerLink="." [queryParams]="{tags: filter.tags ? (filter.tags.includes(tag) ? filter.tags.splice(filter.tags.indexOf(tag), 1) : filter.tags.concat(tag)).join(',') : tag}" queryParamsHandling="merge"
-        >
-          {{ tag }}
-        </a>
+        @for (tag of tags; track tag) {
+          <a ngbDropdownItem
+             routerLink="."
+             [queryParams]="{tags: filter.tags ? (filter.tags.includes(tag) ? filter.tags.splice(filter.tags.indexOf(tag), 1) : filter.tags.concat(tag)).join(',') : tag}"
+             queryParamsHandling="merge"
+          >
+            {{ tag }}
+          </a>
+        }
       </div>
     </div>
   </div>
   <div class="overflow-auto">
-    <sm-empire-item *ngFor="let empire of empires" [empire]="empire"></sm-empire-item>
+    @for (empire of empires; track empire) {
+      <sm-empire-item [empire]="empire"></sm-empire-item>
+    }
   </div>
 </div>

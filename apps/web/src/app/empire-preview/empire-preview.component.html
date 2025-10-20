@@ -1,61 +1,69 @@
-<div *ngIf="empire" class="plain-bg p-3" style="width: 800px">
-  <h4 class="text-center font-orbitron title-glow" style="width: 320px">
-    {{ empire.design.name.key }}
-  </h4>
-  <div class="text-center">
-    <h5 style="color: orange">{{ empire.design.planet_name.key }}</h5>
-    <img src="/assets/planets/{{ empire.design.planet_class }}.png" width="120" height="120">
-    <h5 [smTooltip]="empire.design.planet_class + '_desc' | translate">
-      {{ empire.design.planet_class | translate }}
-    </h5>
-  </div>
-  <div class="row gap-2">
-    <div class="col-auto dark-area-cut">
-      <div class="text-center">
-        <h5 [smTooltip]="empire.design.government + '_desc' | translate">
-          {{ empire.design.government | translate }}
-        </h5>
-        <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
-        <h5 [smTooltip]="empire.design.authority + '_desc' | translate">
-          {{ empire.design.authority | translate }}
-        </h5>
+@if (empire) {
+  <div class="plain-bg p-3" style="width: 800px">
+    <h4 class="text-center font-orbitron title-glow" style="width: 320px">
+      {{ empire.design.name.key }}
+    </h4>
+    <div class="text-center">
+      <h5 style="color: orange">{{ empire.design.planet_name.key }}</h5>
+      <img src="/assets/planets/{{ empire.design.planet_class }}.png" width="120" height="120">
+      <h5 [smTooltip]="empire.design.planet_class + '_desc' | translate">
+        {{ empire.design.planet_class | translate }}
+      </h5>
+    </div>
+    <div class="row gap-2">
+      <div class="col-auto dark-area-cut">
+        <div class="text-center">
+          <h5 [smTooltip]="empire.design.government + '_desc' | translate">
+            {{ empire.design.government | translate }}
+          </h5>
+          <img src="/assets/authorities/{{ empire.design.authority }}.png" width="44" height="44">
+          <h5 [smTooltip]="empire.design.authority + '_desc' | translate">
+            {{ empire.design.authority | translate }}
+          </h5>
+        </div>
+        <ul class="list-unstyled">
+          @for (civic of empire.design.civics; track civic) {
+            <li class="d-flex align-items-center" [smTooltip]="civic + '_desc' | translate">
+              <img src="/assets/civics/{{ civic }}.png" width="29" height="29" class="me-2">
+              {{ civic | translate }}
+            </li>
+          }
+        </ul>
+        <ul class="list-unstyled">
+          @for (ethic of [empire.design.ethic].flat(); track ethic) {
+            <li class="d-flex align-items-center" [smTooltip]="ethic + '_desc' | translate">
+              <img src="/assets/ethics/{{ ethic }}.png" width="29" height="29" class="me-2">
+              {{ ethic | translate }}
+            </li>
+          }
+        </ul>
       </div>
-      <ul class="list-unstyled">
-        <li *ngFor="let civic of empire.design.civics" class="d-flex align-items-center" [smTooltip]="civic + '_desc' | translate">
-          <img src="/assets/civics/{{ civic }}.png" width="29" height="29" class="me-2">
-          {{ civic | translate }}
-        </li>
-      </ul>
-      <ul class="list-unstyled">
-        <li *ngFor="let ethic of [empire.design.ethic].flat()" class="d-flex align-items-center" [smTooltip]="ethic + '_desc' | translate">
-          <img src="/assets/ethics/{{ ethic }}.png" width="29" height="29" class="me-2">
-          {{ ethic | translate }}
-        </li>
-      </ul>
-    </div>
-    <div class="col-auto dark-area-cut">
-      <h5>{{ empire.design.species.species_name.key }}</h5>
-      <h6 style="color: aquamarine" [smTooltip]="empire.design.species.class + '_desc' | translate">
-        {{ empire.design.species.class | translate }}
-      </h6>
-      <ul class="list-unstyled">
-        <li *ngFor="let trait of [empire.design.species.trait].flat()" class="d-flex align-items-center" [smTooltip]="trait + '_desc' | translate">
-          <img src="/assets/traits/{{ trait }}.png" width="29" height="29" class="me-2">
-          {{ trait | translate }}
-        </li>
-      </ul>
-    </div>
-    <div class="col dark-area-cut">
-      <div class="d-flex align-items-center" [smTooltip]="empire.design.origin + '_desc' | translate">
-        <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40" class="me-2">
-        <h5>{{ empire.design.origin | translate }}</h5>
+      <div class="col-auto dark-area-cut">
+        <h5>{{ empire.design.species.species_name.key }}</h5>
+        <h6 style="color: aquamarine" [smTooltip]="empire.design.species.class + '_desc' | translate">
+          {{ empire.design.species.class | translate }}
+        </h6>
+        <ul class="list-unstyled">
+          @for (trait of [empire.design.species.trait].flat(); track trait) {
+            <li class="d-flex align-items-center" [smTooltip]="trait + '_desc' | translate">
+              <img src="/assets/traits/{{ trait }}.png" width="29" height="29" class="me-2">
+              {{ trait | translate }}
+            </li>
+          }
+        </ul>
       </div>
-      <p style="color: aquamarine">
-        {{ empire.design.species.species_bio || (empire.design.origin + '_desc' | translate) }}
-      </p>
+      <div class="col dark-area-cut">
+        <div class="d-flex align-items-center" [smTooltip]="empire.design.origin + '_desc' | translate">
+          <img src="/assets/origins/{{ empire.design.origin }}.png" width="40" height="40" class="me-2">
+          <h5>{{ empire.design.origin | translate }}</h5>
+        </div>
+        <p style="color: aquamarine">
+          {{ empire.design.species.species_bio || (empire.design.origin + '_desc' | translate) }}
+        </p>
+      </div>
     </div>
+    <a class="btn" routerLink="edit">
+      Edit
+    </a>
   </div>
-  <a class="btn" routerLink="edit">
-    Edit
-  </a>
-</div>
+}

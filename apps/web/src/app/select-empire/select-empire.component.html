@@ -15,7 +15,9 @@
       <a routerLink="gallery" class="select-button observe mb-1" routerLinkActive="selected" smTooltip="Show Gallery">
         Observe
       </a>
-      <sm-empire-item *ngFor="let empire of empires" [empire]="empire" class="mb-1"></sm-empire-item>
+      @for (empire of empires; track empire) {
+        <sm-empire-item [empire]="empire" class="mb-1"></sm-empire-item>
+      }
     </div>
   </div>
   <div class="col d-flex align-items-center justify-content-center">

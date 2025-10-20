@@ -1,5 +1,4 @@
-import {Directive, HostListener, Inject, Input, OnDestroy, Renderer2} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
+import {Directive, DOCUMENT, HostListener, Inject, Input, OnDestroy, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[smTooltip]',

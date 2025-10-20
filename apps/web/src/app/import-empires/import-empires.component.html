@@ -10,7 +10,9 @@
       <label for="gameVersion" class="form-label">Game Version</label>
       <select class="form-control btn" id="gameVersion" [(ngModel)]="gameVersion">
         <option [value]="undefined">Please select...</option>
-        <option *ngFor="let gameVersion of gameVersions" [value]="gameVersion">{{ gameVersion }}</option>
+        @for (gameVersion of gameVersions; track gameVersion) {
+          <option [value]="gameVersion">{{ gameVersion }}</option>
+        }
       </select>
       <div class="form-text">
         Select a game version to let others know if your empire is compatible.
@@ -28,7 +30,9 @@
   <div class="col-5 h-100 d-flex flex-column">
     <h4>Results</h4>
     <div class="overflow-auto flex-grow-1">
-      <sm-empire-item *ngFor="let empire of empires" [empire]="empire" (click)="import(empire)"></sm-empire-item>
+      @for (empire of empires; track empire) {
+        <sm-empire-item [empire]="empire" (click)="import(empire)"></sm-empire-item>
+      }
     </div>
     <div class="form-text">
       Click to import a result.

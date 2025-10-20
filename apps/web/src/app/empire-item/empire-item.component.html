@@ -6,8 +6,10 @@
     <ngb-rating [style.color]="userRating ? '#f7fc34' : '#c3b091'" [max]="5" [rate]="userRating || empire.rating || 0"
                 [smTooltip]="empire.ratings + ' Ratings, averaging ' + (empire.rating | number:'0.1')"
                 (rateChange)="rate($event)"></ngb-rating>
-    <span *ngFor="let tag of empire.tags || []" class="badge bg-secondary">
-      {{ tag }}
-    </span>
+    @for (tag of empire.tags || []; track tag) {
+      <span class="badge bg-secondary">
+        {{ tag }}
+      </span>
+    }
   </div>
 </a>
