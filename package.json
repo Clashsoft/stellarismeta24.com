@@ -82,6 +82,9 @@
     "ts-node": "10.9.2",
     "typescript": "5.9.3"
   },
+  "resolutions": {
+    "vite@~7.1.0": "~7.1.11"
+  },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@nestjs/core",
