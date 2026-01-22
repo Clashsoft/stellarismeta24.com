@@ -83,7 +83,7 @@
     "typescript": "5.9.3"
   },
   "resolutions": {
-    "vite@~7.1.0": "~7.1.11"
+    "lodash@>=4.0.0 <=4.17.22": "^4.17.23"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
